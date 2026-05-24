@@ -33,7 +33,19 @@ int main()
                             break;
                         }
                     }
+                    if (flag)
+                    {
+                        break;
+                    }
                 }
+                if (flag)
+                {
+                    break;
+                }
+            }
+            if (flag)
+            {
+                break;
             }
         }
 

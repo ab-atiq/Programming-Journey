@@ -37,6 +37,20 @@ int main()
     Student s3("Charlie", 3, 'C', 88, 10);
 
     // Find who has the highest math_marks
+    // if (s1.math_marks > s2.math_marks && s1.math_marks > s3.math_marks)
+    // {
+    //     cout << "Topper is: " << s1.name << endl;
+    // }
+    // else if (s2.math_marks > s3.math_marks && s2.math_marks > s3.math_marks)
+    // {
+    //     cout << "Topper is: " << s2.name << endl;
+    // }
+    // else
+    // {
+    //     cout << "Topper is: " << s3.name << endl;
+    // }
+
+    // if height marks are same then we will consider lower roll number or ID as topper.
     if (s1.math_marks > s2.math_marks && s1.math_marks > s3.math_marks)
     {
         cout << "Topper is: " << s1.name << endl;
@@ -45,9 +59,65 @@ int main()
     {
         cout << "Topper is: " << s2.name << endl;
     }
-    else
+    else if (s3.math_marks > s1.math_marks && s3.math_marks > s2.math_marks)
     {
         cout << "Topper is: " << s3.name << endl;
+    }
+    else
+    {
+        // equal marks case
+        if (s1.math_marks == s2.math_marks && s1.math_marks == s3.math_marks)
+        {
+            // all three have same marks, consider roll number
+            if (s1.roll < s2.roll && s1.roll < s3.roll)
+            {
+                cout << "Topper is: " << s1.name << endl;
+            }
+            else if (s2.roll < s1.roll && s2.roll < s3.roll)
+            {
+                cout << "Topper is: " << s2.name << endl;
+            }
+            else
+            {
+                cout << "Topper is: " << s3.name << endl;
+            }
+        }
+        else if (s1.math_marks == s2.math_marks)
+        {
+            // s1 and s2 have same marks, consider roll number
+            if (s1.roll < s2.roll)
+            {
+                cout << "Topper is: " << s1.name << endl;
+            }
+            else
+            {
+                cout << "Topper is: " << s2.name << endl;
+            }
+        }
+        else if (s1.math_marks == s3.math_marks)
+        {
+            // s1 and s3 have same marks, consider roll number
+            if (s1.roll < s3.roll)
+            {
+                cout << "Topper is: " << s1.name << endl;
+            }
+            else
+            {
+                cout << "Topper is: " << s3.name << endl;
+            }
+        }
+        else if (s2.math_marks == s3.math_marks)
+        {
+            // s2 and s3 have same marks, consider roll number
+            if (s2.roll < s3.roll)
+            {
+                cout << "Topper is: " << s2.name << endl;
+            }
+            else
+            {
+                cout << "Topper is: " << s3.name << endl;
+            }
+        }
     }
 
     // Find who has the highest math_marks
@@ -58,7 +128,7 @@ int main()
         top = s3;
     cout << "Topper in math is: " << top.name << endl;
 
-    // Store them in an array
+    // Store them in an array - next week
     Student students[3] = {s1, s2, s3};
     int maxIndex = 0;
     Student maxMarkStudent = students[0];

@@ -2,8 +2,9 @@
 using namespace std;
 int main()
 {
-    string s;
+    // char s[1000];
     // while(cin.getline(s, 1000)) // Read entire line for character array. it is not applicable for built in string.
+    string s;
     while (getline(cin, s)) // Reads entire lines, including spaces.
     {
         // cout << s << endl;

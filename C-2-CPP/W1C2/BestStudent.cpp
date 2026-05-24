@@ -1,8 +1,9 @@
 #include <iostream>
 using namespace std;
 
-struct Student
+class Student
 {
+public:
     int id;
     string name;
     char section;
@@ -19,16 +20,23 @@ int main()
         Student a;
         cin >> a.id >> a.name >> a.section >> a.marks;
 
+        // int maxNum = INT_MIN; // -2^31
+        // int maxNum = 0; // we can also solve comparing with maxNum
         Student best = a;
         for (int i = 1; i < 3; i++)
         {
             Student s;
             cin >> s.id >> s.name >> s.section >> s.marks;
+            // check input get correctly or not
+            // cout << s.id << " " << s.name << " " << s.section << " " << s.marks << endl;
 
+            // shortcut way
             // if (s.marks > best.marks || (s.marks == best.marks && s.id < best.id))
             // {
             //     best = s;
             // }
+
+            // long way and more understandable way
             if (s.marks > best.marks)
             {
                 best = s;
@@ -52,8 +60,9 @@ int main()
 #include <iostream>
 using namespace std;
 
-struct Student
+class Student
 {
+public:
     int id;
     string name;
     char section;
@@ -69,7 +78,7 @@ int main()
     {
         Student best;
 
-        for (int i = 0; i < 3; i++)
+        for (int i = 0; i < 3; i++) // loop start from 0
         {
             Student s;
             cin >> s.id >> s.name >> s.section >> s.marks;
@@ -92,6 +101,51 @@ int main()
 
     return 0;
 }
+*/
+
+/* 
+// another way to solve this problem - shortcut way
+#include <iostream>
+using namespace std;
+
+class Student
+{
+public:
+    int id;
+    string name;
+    char section;
+    int marks;
+};
+
+int main()
+{
+    int T;
+    cin >> T;
+
+    while (T--)
+    {
+        Student best, s1, s2, s3;
+        cin >> s1.id >> s1.name >> s1.section >> s1.marks;
+        cin >> s2.id >> s2.name >> s2.section >> s2.marks
+        cin >> s3.id >> s3.name >> s3.section >> s3.marks;
+
+        best = s1;
+        if (s2.marks > best.marks || (s2.marks == best.marks && s2.id < best.id))
+        {
+            best = s2;
+        }
+        if (s3.marks > best.marks || (s3.marks == best.marks && s3.id < best.id))
+        {
+            best = s3;
+        }
+                
+
+        cout << best.id << " " << best.name << " " << best.section << " " << best.marks << endl;
+    }
+
+    return 0;
+}
+
 */
 
 /*
@@ -191,8 +245,9 @@ int main()
 #include <iostream>
 using namespace std;
 
-struct Student
+class Student
 {
+public:
     int id;
     string name;
     char section;
