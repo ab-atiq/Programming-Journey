@@ -1,0 +1,27 @@
+1. https://atcoder.jp/contests/abc284/tasks/abc284_b
+2. https://atcoder.jp/contests/abc307/tasks/abc307_a
+3. https://atcoder.jp/contests/abc368/tasks/abc368_a (array rotation, queue, vector, not stack)
+4. https://atcoder.jp/contests/abc290/tasks/abc290_a
+5. https://atcoder.jp/contests/abc297/tasks/abc297_a
+6. https://atcoder.jp/contests/abc308/tasks/abc308_a
+7. https://atcoder.jp/contests/abc235/tasks/abc235_b
+8. https://atcoder.jp/contests/abc286/tasks/abc286_a
+9. https://codeforces.com/contest/1915/problem/C
+10. https://atcoder.jp/contests/abc328/tasks/abc328_b (hard)
+11. https://atcoder.jp/contests/abc236/tasks/abc236_b (frequency count)
+12. https://cses.fi/problemset/task/1083 - hard (sort)
+13. https://codeforces.com/contest/1873/problem/B (sort)
+14. https://codeforces.com/contest/1669/problem/B (sort, frequency array)
+15. https://atcoder.jp/contests/abc301/tasks/abc301_b
+16. https://atcoder.jp/contests/abc293/tasks/abc293_b (frequency array)
+17. https://atcoder.jp/contests/abc330/tasks/abc330_b (hard)
+18. https://atcoder.jp/contests/abc280/tasks/abc280_b
+19. https://codeforces.com/problemset/problem/1878/A
+20. https://www.hackerrank.com/contests/101hack39/challenges/equality-in-a-array/problem - not soved
+
+
+21. https://atcoder.jp/contests/abc331/tasks/abc331_c - hard (not solution provided)
+22. 
+23. 
+24. 
+25. 

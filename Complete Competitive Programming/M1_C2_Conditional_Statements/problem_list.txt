@@ -1,0 +1,34 @@
+1. https://www.codechef.com/problems/THALA7
+2. https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP1_2_A
+3. https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP1_2_B
+4. https://www.codechef.com/problems/ERROR404
+5. https://www.codechef.com/problems/MINWAGE
+6. https://www.codechef.com/problems/SPCP1
+7. https://www.codechef.com/problems/CWC23QUALIF
+8. https://www.codechef.com/problems/CPRIVAL
+9. https://www.codechef.com/problems/FIZZBUZZ2301
+10. https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP1_2_C
+11. https://www.codechef.com/problems/OCTATHON
+12. https://www.codechef.com/problems/NEWSPAPER
+13. https://www.codechef.com/problems/AIRINDEX
+14. https://www.codechef.com/problems/PUZHUNT
+15. https://atcoder.jp/contests/abc333/tasks/abc333_b - pentagon
+16. https://www.codechef.com/problems/MVR
+17. https://www.codechef.com/problems/ONEFULPAIRS
+18. https://atcoder.jp/contests/abc304/tasks/abc304_b
+19. https://www.codechef.com/problems/NEWCC
+20. https://atcoder.jp/contests/abc326/tasks/abc326_a
+
+21. https://codeforces.com/problemset/problem/4/A - Watermelon
+22. https://atcoder.jp/contests/abc149/tasks/abc149_b - cookies
+23. https://www.codechef.com/problems/FUELCHK
+24. https://www.codechef.com/problems/P1149
+
+25. https://www.codechef.com/problems/DIWALIDISC
+26. https://www.codechef.com/problems/SPRCLN
+27. https://www.codechef.com/problems/TOYS
+28. https://www.codechef.com/problems/IOI2024
+29. https://www.codechef.com/problems/COLORB
+30. https://www.codechef.com/practice/course/basic-programming-concepts/DIFF500/problems/PRACTICEPERF
+31. https://www.codechef.com/practice/course/basic-programming-concepts/DIFF500/problems/PAR2
+32. https://www.codechef.com/practice/course/cpp/PCPP11/problems/CPPDEBUG11

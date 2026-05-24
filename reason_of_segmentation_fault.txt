@@ -1,0 +1,39 @@
+1. pass variable without & in scanf function
+    Example:
+    ```c
+    int num;
+    scanf("%d", num); // Incorrect, should be &num
+    ```
+
+2. dereferencing a NULL pointer
+    Example:
+    ```c
+    int *ptr = NULL;
+    *ptr = 10; // Incorrect, dereferencing NULL pointer
+    ```
+
+3. accessing array out of bounds
+    Example:
+    ```c
+    int arr[5];
+    arr[5] = 10; // Incorrect, accessing out of bounds
+    ```
+4. stack overflow due to infinite recursion
+    Example:
+    ```c
+    void recurse() {
+        recurse();
+    }
+    ```
+5. writing to read-only memory
+    Example:
+    ```c
+    const int num = 10;
+    num = 20; // Incorrect, writing to read-only memory
+    ```
+6. using uninitialized pointer
+    Example:
+    ```c
+    int *ptr;
+    *ptr = 10; // Incorrect, using uninitialized pointer
+    ```

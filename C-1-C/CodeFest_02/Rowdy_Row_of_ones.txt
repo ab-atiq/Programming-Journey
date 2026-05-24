@@ -1,0 +1,259 @@
+Problem Name: "Rowdy Row of Ones!"
+
+Problem Statement:
+You are the Chief of Matrix Intelligence (CMI) and you’ve just received a binary intelligence matrix (contains only 0 and 1) from the secret vault. Each row in this matrix is **sorted in non-decreasing order** — all the zeros come first, followed by ones. Your mission is **find the row with the highest number of 1s!**
+
+If there is more than one row with the same maximum number of 1s, report the **smallest index** (top-most such row).
+
+
+Constraints:
+    1 ≤ N ≤ 100  
+    1 ≤ M ≤ 100  
+    Each element in the matrix is either 0 or 1.  
+    Each row is sorted in non-decreasing order (all 0s before 1s).
+
+
+Input Format:
+    * The first line contains two integers N and M — the number of rows and columns in the matrix.
+    * The next N lines each contain M integers — either 0 or 1, separated by a space.
+
+Output Format:
+    Print a single integer — the 0-based index of the row that contains the maximum number of 1s.
+
+
+
+Sample Input:
+4 5
+0 0 1 1 1
+0 0 0 1 1
+0 0 0 0 1
+1 1 1 1 1
+📤 Sample Output:
+    3
+🧠 Explanation:
+Row 0 has 3 ones
+Row 1 has 2 ones
+Row 2 has 1 one
+Row 3 has 5 ones
+
+Row 3 has the maximum number of 1s. So, the answer is 3.
+
+Input:
+3 4
+0 0 0 0
+0 0 1 1
+0 1 1 1
+Output:
+2
+
+
+Input:
+1 3
+1 1 1
+Output:
+0
+
+
+Input:
+3 3
+0 0 0
+0 0 0
+0 0 1
+Output:
+2
+
+
+Input:
+5 6
+0 0 0 0 1 1
+0 0 1 1 1 1
+0 0 0 1 1 1
+1 1 1 1 1 1
+0 0 0 0 0 0
+Output:
+3
+
+
+Input:
+3 3
+1 1 1
+1 1 1
+1 1 1
+Output:
+0
+
+
+Input:
+5 5
+0 0 0 0 0
+0 0 0 0 0
+0 0 0 0 0
+0 0 0 0 0
+0 0 0 0 0
+Output:
+0
+
+
+Input:
+5 5
+1 1 1 1 1
+0 1 1 1 1
+0 0 1 1 1
+0 0 0 1 1
+0 0 0 0 1
+Output:
+0
+
+
+Input:
+5 6
+0 0 1 1 1 1
+0 1 1 1 1 1
+1 1 1 1 1 1
+0 0 0 0 0 1
+0 0 0 0 1 1
+Output:
+2
+
+
+Input:
+1 1
+0
+Output:
+0
+
+
+Input:
+1 1
+1
+Output:
+0
+
+
+Input:
+10 10
+0 0 0 0 1 1 1 1 1 1
+0 0 0 0 0 0 1 1 1 1
+0 0 0 1 1 1 1 1 1 1
+0 0 0 0 0 0 0 1 1 1
+0 0 0 0 0 0 0 0 1 1
+0 1 1 1 1 1 1 1 1 1
+0 0 0 1 1 1 1 1 1 1
+0 0 0 0 0 0 0 0 0 1
+0 0 0 0 0 1 1 1 1 1
+0 0 1 1 1 1 1 1 1 1
+Output:
+5
+
+
+Input:
+12 12
+0 0 0 0 0 0 0 0 1 1 1 1
+0 0 0 0 0 0 1 1 1 1 1 1
+0 0 0 1 1 1 1 1 1 1 1 1
+0 0 0 0 0 0 0 0 0 0 1 1
+0 0 0 0 0 0 0 0 0 1 1 1
+0 0 1 1 1 1 1 1 1 1 1 1
+0 0 0 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1
+0 0 0 0 1 1 1 1 1 1 1 1
+0 0 0 0 0 0 1 1 1 1 1 1
+0 0 0 0 0 0 0 0 0 1 1 1
+0 0 0 0 0 0 0 0 0 0 1 1
+Output:
+7
+
+
+
+Input:
+15 15
+0 0 0 0 0 0 0 0 0 0 0 0 1 1 1
+0 0 0 0 0 0 0 1 1 1 1 1 1 1 1
+0 0 0 0 0 0 0 0 0 1 1 1 1 1 1
+0 0 0 0 0 0 1 1 1 1 1 1 1 1 1
+0 0 0 0 0 1 1 1 1 1 1 1 1 1 1
+0 0 0 0 1 1 1 1 1 1 1 1 1 1 1
+0 0 0 0 0 0 0 0 0 0 0 1 1 1 1
+0 0 0 0 0 0 0 0 0 0 1 1 1 1 1
+0 0 0 0 0 0 0 0 0 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+0 0 0 0 0 0 0 0 0 0 0 0 1 1 1
+0 0 0 0 0 0 0 0 0 0 0 0 0 1 1
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 1
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 1 1 1 1 1 1 1
+Output:
+9
+
+
+
+Input:
+18 10
+0 0 0 0 0 0 0 0 1 1
+0 0 0 0 0 1 1 1 1 1
+0 0 0 0 0 0 0 0 0 1
+0 0 0 1 1 1 1 1 1 1
+0 0 0 0 0 0 0 0 0 0
+0 1 1 1 1 1 1 1 1 1
+0 0 1 1 1 1 1 1 1 1
+0 0 0 0 0 0 0 1 1 1
+0 0 0 0 0 0 0 0 0 1
+0 0 0 0 0 0 0 0 1 1
+0 0 0 0 0 1 1 1 1 1
+0 0 0 0 0 0 1 1 1 1
+0 0 0 0 0 0 0 0 0 0
+0 0 0 0 1 1 1 1 1 1
+0 0 0 0 0 0 0 0 0 1
+0 0 0 0 0 0 0 0 1 1
+0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 1
+Output:
+5
+
+
+Input:
+20 12
+0 0 0 0 0 0 0 0 0 1 1 1
+0 0 0 0 0 0 0 0 1 1 1 1
+0 0 0 0 0 0 0 1 1 1 1 1
+0 0 0 0 0 0 1 1 1 1 1 1
+0 0 0 0 0 1 1 1 1 1 1 1
+0 0 0 0 1 1 1 1 1 1 1 1
+0 0 0 1 1 1 1 1 1 1 1 1
+0 0 1 1 1 1 1 1 1 1 1 1
+0 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1 1 1 1 1 1 1 1 1
+0 0 0 0 0 0 0 0 0 0 1 1
+0 0 0 0 0 0 0 0 0 0 0 1
+0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 1 1
+0 0 0 0 0 0 0 0 0 0 0 0
+1 1 1 1 1 1 1 1 1 1 1 1
+0 0 0 0 0 0 1 1 1 1 1 1
+0 0 0 0 0 0 0 0 1 1 1 1
+0 0 0 0 0 0 0 0 0 1 1 1
+Output:
+9
+
+
+Rowdy Row of Ones!
+সমস্যা বোঝা:
+একটি N × M সাইজের binary matrix (শুধু 0 এবং 1 থাকে) দেওয়া হবে।
+প্রতিটি row সাজানো থাকে (sorted) — মানে প্রত্যেক row-এ সব 0 আসবে আগে, তারপর সব 1 আসবে।
+কাজ হলো: যে row-তে সবচেয়ে বেশি 1 আছে, তার index খুঁজে বের করা।
+যদি একাধিক row-তে সমান সংখ্যক 1 থাকে, তাহলে ছোট index বেছে নাও।
+
+
+সমাধানের ধাপ:
+1. প্রথমে ইনপুট থেকে n এবং m (row ও column সংখ্যা) নাও। এরপর n × m সাইজের একটি ম্যাট্রিক্স ইনপুট নাও।
+2. প্রতিটি row এর জন্য column স্ক্যান করো। খুঁজে বের করো ওই row-তে প্রথম কোথায় 1 এসেছে।
+3. row-তে 1 এর সংখ্যা হিসাব করা। যেহেতু row-গুলোতে সব 0 আগে, এরপর 1 — তাই যেখান থেকে প্রথম 1 পাওয়া যাবে, সেখান থেকে বাকি সব 1 হবে। তাহলে ওই row-তে মোট 1 এর সংখ্যা হবে: m - j (যেখানে j = প্রথম 1 এর ইনডেক্স, m হচ্ছে column সংখ্যা)।
+
+অথবা, সূত্র m -j ব্যবহার না করে আপনি সরাসরি সবগুলো 1 গণনা করে নিতে পারেন। 
+
+4. সর্বোচ্চ 1 যেই row-তে আছে তা বের করা। যদি কোনো row-তে 1 এর সংখ্যা আগের সর্বোচ্চ সংখ্যার চেয়ে বেশি হয়, তাহলে:
+নতুন 1 এর সংখ্যাটা রাখো (maxOnes ভ্যারিয়েবল এর মধ্যে)
+সেই row-র ইনডেক্সটা রাখো (maxOneIndex ভ্যারিয়েবল এর মধ্যে)
+
+5. সব row দেখা শেষ হলে, যার 1 সবচেয়ে বেশি, তার index প্রিন্ট করো।

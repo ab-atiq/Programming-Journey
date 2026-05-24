@@ -1,0 +1,38 @@
+1. https://codeforces.com/contest/1703/problem/A
+2. https://atcoder.jp/contests/abc335/tasks/abc335_a
+3. https://atcoder.jp/contests/abc329/tasks/abc329_a
+4. https://codeforces.com/contest/1873/problem/A
+5. https://atcoder.jp/contests/abc327/tasks/abc327_a
+6. 
+7. 
+8. 
+9. 
+10.
+11. 
+12. 
+13. 
+14. 
+15. 
+16. 
+17. 
+18. 
+19. 
+20. 
+21. 
+22. 
+23. 
+24. 
+25. 
+26. 
+27. 
+28. 
+29. 
+30. 
+
+
+
+31. https://www.codechef.com/problems/WOLFDOWN
+32. https://www.codechef.com/problems/MAKESUB - mid (good for programming)
+
+
+https://atcoder.jp/contests/abc301/tasks/abc301_a

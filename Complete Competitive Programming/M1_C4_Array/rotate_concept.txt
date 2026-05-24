@@ -1,0 +1,41 @@
+https://www.google.com/search?q=rotate+function+in+cpp&oq=rotate+function+in+cpp&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIICAEQABgWGB4yCAgCEAAYFhgeMggIAxAAGBYYHjINCAQQABiGAxiABBiKBTINCAUQABiGAxiABBiKBTIKCAYQABiABBiiBNIBCDYyNzhqMGo3qAIAsAIA&sourceid=chrome&ie=UTF-8
+https://www.geeksforgeeks.org/cpp/rotate-in-cpp-stl/
+
+
+
+
+The std::rotate function in C++ is part of the Standard Template Library (STL) and is defined in the <algorithm> header. It is used to rotate the elements within a specified range in a way that a chosen element becomes the new first element of that range. 
+Syntax:
+C++
+
+template <class ForwardIterator>
+void rotate (ForwardIterator first, ForwardIterator middle, ForwardIterator last);
+Parameters:
+first: An iterator pointing to the beginning of the range to be rotated.
+middle: An iterator pointing to the element that will become the new first element of the rotated range.
+last: An iterator pointing to one past the end of the range to be rotated.
+Functionality:
+The std::rotate function rearranges the elements in the range [first, last) such that the elements in [first, middle) are moved to the end of the range, and the elements in [middle, last) are moved to the beginning. The relative order of elements within [first, middle) and [middle, last) is preserved. 
+Example:
+C++
+
+#include <iostream>
+#include <vector>
+#include <algorithm> // Required for std::rotate
+
+int main() {
+    std::vector<int> v = {1, 2, 3, 4, 5};
+
+    // Rotate the vector such that the element at index 2 (value 3) becomes the new first element.
+    // The range is [v.begin(), v.end()), and v.begin() + 2 points to the element '3'.
+    std::rotate(v.begin(), v.begin() + 2, v.end());
+
+    std::cout << "Rotated vector: ";
+    for (int x : v) {
+        std::cout << x << " ";
+    }
+    std::cout << std::endl; // Output: 3 4 5 1 2 
+
+    return 0;
+}
+In this example, the elements 1 and 2 (from v.begin() to v.begin() + 2) are moved to the end of the vector, while 3, 4, and 5 (from v.begin() + 2 to v.end()) are moved to the beginning, resulting in the order 3 4 5 1 2.

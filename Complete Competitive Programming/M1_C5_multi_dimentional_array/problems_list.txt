@@ -1,0 +1,24 @@
+1. https://eolymp.com/en/problems/8941 - not provided
+2. https://atcoder.jp/contests/abc280/tasks/abc280_a
+3. https://atcoder.jp/contests/abc237/tasks/abc237_b
+4. https://atcoder.jp/contests/abc309/tasks/abc309_a
+5. https://atcoder.jp/contests/abc311/tasks/abc311_b - mid
+6. https://eolymp.com/en/problems/9562 
+7. https://eolymp.com/en/problems/2322
+8. https://atcoder.jp/contests/abc296/tasks/abc296_b
+9. https://eolymp.com/en/problems/5282 - hard 
+10. https://atcoder.jp/contests/abc197/tasks/abc197_b
+11. https://atcoder.jp/contests/abc294/tasks/abc294_b - ascii
+12. https://atcoder.jp/contests/abc309/tasks/abc309_b
+13. https://atcoder.jp/contests/abc327/tasks/abc327_c - hard
+14. https://atcoder.jp/contests/abc303/tasks/abc303_b - hard 
+15. https://atcoder.jp/contests/abc302/tasks/abc302_b - very hard
+16. https://atcoder.jp/contests/abc295/tasks/abc295_b - hard
+17. https://atcoder.jp/contests/abc282/tasks/abc282_b - hard
+18. https://eolymp.com/en/problems/4752 - mid
+19. https://atcoder.jp/contests/abc298/tasks/abc298_b - hard
+20. https://atcoder.jp/contests/abc300/tasks/abc300_b - hard
+
+
+21. 
+22. 

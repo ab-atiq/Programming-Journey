@@ -1,0 +1,42 @@
+1. https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP1_3_A - (not give)
+2. https://www.codechef.com/problems/AGEING
+3. https://www.codechef.com/problems/IPLTRSH
+4. https://www.codechef.com/problems/DNATION
+5. https://codeforces.com/contest/1560/problem/A
+6. https://www.codechef.com/problems/SUNNYDAY
+7. https://atcoder.jp/contests/abc336/tasks/abc336_a
+8. https://atcoder.jp/contests/abc328/tasks/abc328_a
+9. https://www.codechef.com/problems/CANDIVIDE
+10. https://codeforces.com/contest/1850/problem/B (Mid) - also can use pair of priority queue, custom sort for array of pair or struct or vector - (not give)
+11. https://www.codechef.com/problems/DONDRIVE
+12. https://www.codechef.com/problems/RIGHTTHERE
+13. https://atcoder.jp/contests/abc332/tasks/abc332_b (Mid)
+14. https://codeforces.com/contest/1669/problem/A
+15. https://www.codechef.com/problems/HATTRICK
+16. https://www.codechef.com/problems/SPCP2
+17. https://www.codechef.com/problems/VIDEOWORTH
+18. https://www.codechef.com/problems/ASSIGNMNT
+19. https://www.codechef.com/problems/FAIRSHARE
+20. https://www.codechef.com/problems/EXAMCHEF
+21. https://codeforces.com/contest/1352/problem/A - (mid)
+22. https://www.codechef.com/problems/CHESS_PAIR
+23. https://www.codechef.com/problems/BRUNCH
+24. https://lightoj.com/problem/greetings-from-lightoj
+25. https://codeforces.com/contest/1352/problem/B - (hard)
+26. https://www.codechef.com/problems/AGENTCHEF
+27. https://www.codechef.com/problems/FIZZBUZZ23_2
+28. https://www.codechef.com/problems/DICENUM
+29. https://www.codechef.com/problems/PIZZAC
+30. https://atcoder.jp/contests/abc151/tasks/abc151_b?lang=en
+
+31. https://vjudge.net/contest/761326#problem/V
+
+
+32. https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP1_3_B - (TEST CASES)
+33. https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP1_3_C - EOF and check both value
+34. https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP1_4_D - min, max, sum
+
+35. https://codeforces.com/problemset/problem/110/A - Nearly Lucky Number
+36. https://www.codechef.com/problems/CHRBUY -
+
+37. https://www.codechef.com/problems/TOURIST - mid

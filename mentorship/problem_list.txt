@@ -1,0 +1,161 @@
+Basic problem solving Contest 1
+---------------------------------------------------------
+Link: https://vjudge.net/contest/771932
+password: mentor_atiqur
+
+1. https://www.codechef.com/problems/MVR - math + conditional statements
+2. https://www.codechef.com/problems/FUELCHK - if-else statements
+3. https://www.codechef.com/problems/RIP2000 - math
+4. https://www.codechef.com/problems/CCLEARN - multiply by 2
+5. https://www.codechef.com/problems/PHONEYR - conditional statements or input output handling
+6. https://www.codechef.com/problems/OFFBY1 - conditional statements or input output handling
+7. https://www.codechef.com/problems/ERROR404 - conditional statements
+8. https://www.codechef.com/problems/P1149 - conditional statements
+9. https://www.codechef.com/problems/CHRBUY - test cases and conditionals
+10. https://www.codechef.com/problems/WOLFDOWN - count all zero before first one
+
+---------------------------------------------------------
+Basic problem solving Contest 2 
+---------------------------------------------------------
+Link: https://vjudge.net/contest/775956
+password: mentor_atiqur
+
+1. https://www.codechef.com/problems/GAMBLING - 7-a
+2. https://www.codechef.com/problems/NUGGET 
+3. https://www.codechef.com/problems/IPLTRSH
+4. https://www.codechef.com/problems/TOURIST - manhattan distance
+5. https://www.codechef.com/problems/HATTRICK - module
+6. https://www.codechef.com/problems/GCEA - module
+7. https://www.codechef.com/problems/SINGLEUSE - module
+8. https://www.codechef.com/problems/DICENUM 
+9. https://www.codechef.com/problems/EXAMCHEF
+10. https://www.codechef.com/problems/SPCP2
+
+---------------------------------------------------------
+Basic problem solving Contest 3
+---------------------------------------------------------
+Link: https://vjudge.net/contest/778901
+password: mentor_atiqur
+
+
+1. https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP1_4_A - data type 
+2. https://www.codechef.com/problems/BNE_APT
+3. https://www.codechef.com/problems/FOODCOST
+4. https://www.codechef.com/problems/AIRINDEX
+5. https://www.codechef.com/problems/NEWCC
+6. https://www.codechef.com/problems/P1149 - duplicate of contest 1 problem 8
+7. https://www.codechef.com/problems/AGEING
+8. https://www.codechef.com/problems/CHESS_PAIR
+9. https://www.codechef.com/problems/DICENUM 
+10. https://www.codechef.com/problems/FAIRSHARE
+
+---------------------------------------------------------
+Basic problem solving Contest 4
+---------------------------------------------------------
+Link: https://vjudge.net/contest/780287
+password: mentor_atiqur
+
+1. https://atcoder.jp/contests/abc235/tasks/abc235_a
+2. https://codeforces.com/problemset/problem/110/A
+3. https://atcoder.jp/contests/abc284/tasks/abc284_b
+4. https://www.codechef.com/problems/VIDEOWORTH
+5. https://atcoder.jp/contests/abc302/tasks/abc302_a
+6. https://atcoder.jp/contests/abc304/tasks/abc304_b
+7. https://atcoder.jp/contests/abc326/tasks/abc326_a
+8. https://atcoder.jp/contests/abc149/tasks/abc149_b
+9. https://codeforces.com/contest/1560/problem/A
+10. https://atcoder.jp/contests/abc336/tasks/abc336_a
+
+
+---------------------------------------------------------
+Basic problem solving Contest 5
+---------------------------------------------------------
+Link: https://vjudge.net/contest/781854
+password: mentor_atiqur
+
+
+1. https://atcoder.jp/contests/abc306/tasks/abc306_a
+2. https://atcoder.jp/contests/abc301/tasks/abc301_a
+3. https://atcoder.jp/contests/abc296/tasks/abc296_b
+4. https://atcoder.jp/contests/abc294/tasks/abc294_b
+5. https://atcoder.jp/contests/abc236/tasks/abc236_b
+
+
+---------------------------------------------------------
+Basic problem solving Contest 6
+---------------------------------------------------------
+Link: https://vjudge.net/contest/783056
+password: mentor_atiqur
+
+
+1. https://atcoder.jp/contests/abc289/tasks/abc289_a
+2. https://codeforces.com/contest/1873/problem/A
+3. https://codeforces.com/contest/1703/problem/A
+4. https://atcoder.jp/contests/abc235/tasks/abc235_b
+5. https://atcoder.jp/contests/abc297/tasks/abc297_a
+6. https://www.codechef.com/problems/RIGHTTHERE
+7. https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ITP1_3_C
+
+
+---------------------------------------------------------
+Road to XPSC Contest
+---------------------------------------------------------
+Link: https://vjudge.net/contest/785738
+Password: mentor_atiqur
+
+
+1. https://atcoder.jp/contests/abc303/tasks/abc303_a
+2. https://codeforces.com/contest/1873/problem/B
+3. https://codeforces.com/contest/1352/problem/A
+4. https://codeforces.com/contest/1669/problem/B
+5. https://atcoder.jp/contests/abc328/tasks/abc328_b
+
+
+
+---------------------------------------------------------
+Road to XPSC Contest - 2
+---------------------------------------------------------
+Link: https://vjudge.net/contest/790407
+Password: mentor_atiqur
+
+
+1. https://codeforces.com/problemset/problem/1927/A
+2. https://codeforces.com/problemset/problem/381/A
+3. https://www.codechef.com/problems/MAKESUB
+4. https://atcoder.jp/contests/abc233/tasks/abc233_b?lang=en
+5. https://atcoder.jp/contests/abc311/tasks/abc311_b
+6. https://codeforces.com/contest/1850/problem/B
+
+
+
+---------------------------------------------------------
+Road to XPSC Contest - 3
+---------------------------------------------------------
+Link: https://vjudge.net/contest/791949
+Password: mentor_atiqur
+
+1. https://codeforces.com/problemset/problem/2009/A
+2. https://www.codechef.com/problems/HDIVISR
+3. https://codeforces.com/problemset/problem/1884/A
+4. https://www.codechef.com/problems/FACEDIR
+5. https://codeforces.com/problemset/problem/1772/B
+6. https://atcoder.jp/contests/abc325/tasks/abc325_b
+
+
+
+---------------------------------------------------------
+Road to XPSC Last Practice Contest 
+---------------------------------------------------------
+Link: 
+Password: mentor_atiqur
+
+1. https://codeforces.com/contest/1915/problem/B
+2. https://atcoder.jp/contests/abc323/tasks/abc323_a
+3. https://atcoder.jp/contests/abc299/tasks/abc299_a
+4. https://cses.fi/problemset/task/1660
+5. https://cses.fi/problemset/task/1621
+6. https://cses.fi/problemset/task/1633
+7. https://cses.fi/problemset/task/1196
+8. https://cses.fi/problemset/task/1753
+9. https://cses.fi/problemset/task/1646
+10. https://cses.fi/problemset/task/1672

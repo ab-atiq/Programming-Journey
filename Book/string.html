@@ -1,0 +1,1355 @@
+<!doctype html>
+<html lang="bn">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>C Programming — স্ট্রিং (String)</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap");
+
+      :root {
+        --purple-50: #eeedfe;
+        --purple-100: #cecbf6;
+        --purple-600: #534ab7;
+        --purple-800: #3c3489;
+        --teal-50: #e1f5ee;
+        --teal-100: #9fe1cb;
+        --teal-600: #0f6e56;
+        --teal-800: #085041;
+        --coral-50: #faece7;
+        --coral-100: #f5c4b3;
+        --coral-600: #993c1d;
+        --coral-800: #712b13;
+        --blue-50: #e6f1fb;
+        --blue-100: #b5d4f4;
+        --blue-600: #185fa5;
+        --blue-800: #0c447c;
+        --amber-50: #faeeda;
+        --amber-100: #fac775;
+        --amber-600: #854f0b;
+        --amber-800: #633806;
+        --green-50: #eaf3de;
+        --green-100: #c0dd97;
+        --green-600: #3b6d11;
+        --green-800: #27500a;
+        --gray-100: #d3d1c7;
+        --gray-600: #5f5e5a;
+        --gray-800: #444441;
+        --text: #1a1a1a;
+        --text-light: #555;
+        --bg: #fff;
+        --bg-page: #f8f6f1;
+        --border: #ddd;
+        --radius: 10px;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: "Hind Siliguri", sans-serif;
+        background: var(--bg-page);
+        color: var(--text);
+        font-size: 16px;
+        line-height: 1.8;
+      }
+
+      .page {
+        max-width: 860px;
+        margin: 0 auto;
+        background: var(--bg);
+        padding: 48px 56px;
+        min-height: 100vh;
+      }
+
+      /* ── Chapter heading ─────────────────────────────── */
+      .chapter-title {
+        font-size: 28px;
+        font-weight: 700;
+        color: var(--purple-800);
+        border-bottom: 3px solid var(--purple-600);
+        padding-bottom: 10px;
+        margin-bottom: 8px;
+      }
+      .chapter-subtitle {
+        font-size: 14px;
+        color: var(--gray-600);
+        margin-bottom: 32px;
+      }
+
+      /* ── Intro box ────────────────────────────────────── */
+      .intro-box {
+        background: var(--purple-50);
+        border-left: 5px solid var(--purple-600);
+        border-radius: var(--radius);
+        padding: 18px 22px;
+        margin-bottom: 36px;
+        font-size: 15px;
+        color: #2d2a5e;
+        line-height: 1.9;
+      }
+
+      /* ── Topic block ──────────────────────────────────── */
+      .topic {
+        margin-bottom: 48px;
+      }
+
+      .topic-title {
+        font-size: 20px;
+        font-weight: 700;
+        color: var(--blue-800);
+        border-bottom: 2px solid var(--blue-100);
+        padding-bottom: 6px;
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .topic-title .badge {
+        background: var(--blue-600);
+        color: #fff;
+        font-size: 12px;
+        font-weight: 600;
+        padding: 2px 10px;
+        border-radius: 20px;
+        letter-spacing: 0.5px;
+      }
+
+      /* ── Four-part grid ───────────────────────────────── */
+      .four-parts {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+
+      .part {
+        border-radius: var(--radius);
+        padding: 16px 20px;
+      }
+
+      .part-label {
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        margin-bottom: 8px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .part-label .num {
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 12px;
+        font-weight: 700;
+        flex-shrink: 0;
+      }
+
+      /* Definition */
+      .part-def {
+        background: var(--blue-50);
+        border-left: 4px solid var(--blue-600);
+      }
+      .part-def .part-label {
+        color: var(--blue-800);
+      }
+      .part-def .part-label .num {
+        background: var(--blue-600);
+        color: #fff;
+      }
+
+      /* Syntax */
+      .part-syn {
+        background: var(--purple-50);
+        border-left: 4px solid var(--purple-600);
+      }
+      .part-syn .part-label {
+        color: var(--purple-800);
+      }
+      .part-syn .part-label .num {
+        background: var(--purple-600);
+        color: #fff;
+      }
+
+      /* Real-life */
+      .part-real {
+        background: var(--teal-50);
+        border-left: 4px solid var(--teal-600);
+      }
+      .part-real .part-label {
+        color: var(--teal-800);
+      }
+      .part-real .part-label .num {
+        background: var(--teal-600);
+        color: #fff;
+      }
+
+      /* Code */
+      .part-code {
+        background: #1e1e2e;
+        border-left: 4px solid #cba6f7;
+        border-radius: var(--radius);
+      }
+      .part-code .part-label {
+        color: #cba6f7;
+        padding-top: 4px;
+      }
+      .part-code .part-label .num {
+        background: #cba6f7;
+        color: #1e1e2e;
+      }
+
+      .part p {
+        font-size: 15px;
+        line-height: 1.85;
+      }
+      .part strong {
+        font-weight: 600;
+      }
+
+      /* ── Code block ───────────────────────────────────── */
+      pre {
+        font-family: "Fira Code", monospace;
+        font-size: 13.5px;
+        line-height: 1.7;
+        color: #cdd6f4;
+        padding: 14px 18px;
+        overflow-x: auto;
+        white-space: pre;
+      }
+      .kw {
+        color: #cba6f7;
+      } /* keywords: int, char, if, return */
+      .fn {
+        color: #89b4fa;
+      } /* functions */
+      .str {
+        color: #a6e3a1;
+      } /* strings */
+      .cm {
+        color: #6c7086;
+        font-style: italic;
+      } /* comments */
+      .num {
+        color: #fab387;
+      } /* numbers */
+      .inc {
+        color: #f38ba8;
+      } /* #include */
+      .out {
+        color: #a6e3a1;
+        font-style: italic;
+      } /* output line */
+
+      /* Inline code */
+      code {
+        font-family: "Fira Code", monospace;
+        font-size: 13px;
+        background: #e8e4f7;
+        color: var(--purple-800);
+        padding: 1px 6px;
+        border-radius: 4px;
+      }
+
+      /* ── Real-life analogy card ───────────────────────── */
+      .analogy {
+        display: flex;
+        align-items: flex-start;
+        gap: 14px;
+        font-size: 15px;
+        line-height: 1.85;
+      }
+      .analogy-icon {
+        font-size: 30px;
+        flex-shrink: 0;
+        margin-top: 2px;
+      }
+
+      /* ── Memory diagram ───────────────────────────────── */
+      .mem-diagram {
+        display: flex;
+        align-items: flex-start;
+        gap: 0;
+        margin: 12px 0 6px;
+        flex-wrap: wrap;
+      }
+      .mem-cell {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 4px;
+      }
+      .mem-box {
+        width: 52px;
+        height: 46px;
+        border: 2px solid var(--purple-600);
+        border-right-width: 1px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Fira Code", monospace;
+        font-size: 17px;
+        font-weight: 600;
+        background: var(--purple-50);
+        color: var(--purple-800);
+      }
+      .mem-cell:last-child .mem-box {
+        border-right-width: 2px;
+        background: var(--amber-50);
+        color: var(--amber-800);
+        font-size: 12px;
+        border-color: var(--amber-600);
+      }
+      .mem-idx {
+        font-size: 11px;
+        color: var(--gray-600);
+        font-family: "Fira Code", monospace;
+      }
+
+      /* ── Output box ───────────────────────────────────── */
+      .output-line {
+        background: #11111b;
+        border-radius: 6px;
+        padding: 10px 16px;
+        font-family: "Fira Code", monospace;
+        font-size: 14px;
+        color: #a6e3a1;
+        margin-top: 0;
+        border-top: 1px solid #313244;
+      }
+      .output-label {
+        font-size: 11px;
+        color: #6c7086;
+        font-family: "Fira Code", monospace;
+        margin-bottom: 4px;
+        display: block;
+      }
+
+      /* ── Warning note ─────────────────────────────────── */
+      .note {
+        background: var(--amber-50);
+        border-left: 4px solid var(--amber-600);
+        border-radius: var(--radius);
+        padding: 12px 16px;
+        font-size: 14px;
+        color: var(--amber-800);
+        margin-top: 12px;
+        display: flex;
+        gap: 10px;
+        align-items: flex-start;
+      }
+
+      /* ── Divider ──────────────────────────────────────── */
+      hr {
+        border: none;
+        border-top: 1px solid var(--border);
+        margin: 40px 0;
+      }
+
+      /* ── Table ────────────────────────────────────────── */
+      .summary-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 14px;
+        margin-top: 12px;
+      }
+      .summary-table th {
+        background: var(--purple-600);
+        color: #fff;
+        padding: 10px 14px;
+        text-align: left;
+        font-weight: 600;
+      }
+      .summary-table td {
+        padding: 9px 14px;
+        border-bottom: 1px solid var(--border);
+        font-family: "Fira Code", monospace;
+        font-size: 13px;
+      }
+      .summary-table tr:nth-child(even) td {
+        background: var(--purple-50);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <!-- ══════════════════ CHAPTER TITLE ══════════════════ -->
+      <div class="chapter-title">স্ট্রিং (String)</div>
+      <div class="chapter-subtitle">
+        Course: Introduction to Programming Language &nbsp;|&nbsp; Week: 2
+        &nbsp;|&nbsp; Module: 1
+      </div>
+
+      <!-- Intro -->
+      <div class="intro-box">
+        <strong>স্ট্রিং হলো মূলত ক্যারেক্টারের Array।</strong> আমরা জানি একাধিক
+        letter বা ক্যারেক্টার মিলে একটি Word তৈরি হয়, এবং এক বা একাধিক Word
+        মিলে একটি Sentence। প্রোগ্রামিং-এ এই ধরনের Word বা Sentence স্টোর করার
+        জন্য <code>char</code>-এর Array এত বেশি ব্যবহৃত হয় যে এটি একটি আলাদা
+        Data Type হিসেবে পরিচিত হয়ে উঠেছে।
+      </div>
+
+      <!-- ══════════════════ TOPIC 1: DECLARATION ══════════════════ -->
+      <div class="topic">
+        <div class="topic-title">
+          স্ট্রিং ডিক্লেয়ারেশন
+          <span class="badge">Declaration</span>
+        </div>
+        <div class="four-parts">
+          <!-- i) Definition -->
+          <div class="part part-def">
+            <div class="part-label">
+              <span class="num">i</span> সংজ্ঞা (Definition)
+            </div>
+            <p>
+              <strong>স্ট্রিং ডিক্লেয়ারেশন</strong> মানে হলো প্রোগ্রামকে
+              আগেভাগে জানিয়ে দেওয়া যে, আমি কিছু ক্যারেক্টার (অক্ষর) একসাথে
+              রাখার জন্য মেমোরিতে জায়গা রাখতে চাই। ঠিক যেমন আমরা
+              <code>int</code> বা <code>float</code> ডিক্লেয়ার করি, ঠিক একইভাবে
+              <code>char</code>-এর Array ডিক্লেয়ার করে স্ট্রিং তৈরি করা হয়।
+              স্ট্রিং-এর একদম শেষে সবসময় একটি বিশেষ ক্যারেক্টার
+              <code>'\0'</code> (Null Terminator) থাকে, যা বোঝায় — "এখানেই
+              স্ট্রিং শেষ।"
+            </p>
+          </div>
+
+          <!-- ii) Syntax -->
+          <div class="part part-syn">
+            <div class="part-label">
+              <span class="num">ii</span> সিনট্যাক্স (Syntax)
+            </div>
+            <pre><span class="kw">char</span> str[<span class="num">1000</span>];   <span class="cm">// 1000 ঘরের একটি স্ট্রিং তৈরি হলো</span></pre>
+            <p
+              style="
+                margin-top: 10px;
+                font-size: 14px;
+                color: var(--purple-800);
+              "
+            >
+              এখানে <code>1000</code> মানে মেমোরিতে ১০০০টি ঘর তৈরি হবে। প্রতিটি
+              ঘরে একটি করে ক্যারেক্টার থাকবে। শেষ ঘরে থাকবে <code>'\0'</code>।
+            </p>
+          </div>
+
+          <!-- iii) Real-life -->
+          <div class="part part-real">
+            <div class="part-label">
+              <span class="num">iii</span> বাস্তব জীবনের উদাহরণ
+            </div>
+            <div class="analogy">
+              <div class="analogy-icon">📦</div>
+              <div>
+                মনে করো তুমি একটি ডিম রাখার ট্রে কিনলে যেখানে
+                <strong>৬টি ডিম রাখা যায়</strong>। এখন তুমি "Sifat" নামটি (৫টি
+                অক্ষর) রাখতে চাও। তোমার দরকার ৫টি ঘর অক্ষরের জন্য + ১টি ঘর
+                <code>'\0'</code>-এর জন্য = মোট <strong>৬টি ঘর</strong>। তাই
+                <code>char str[6]</code> ডিক্লেয়ার করতে হবে।
+              </div>
+            </div>
+            <div class="mem-diagram" style="margin-top: 14px">
+              <div class="mem-cell">
+                <div class="mem-box">S</div>
+                <div class="mem-idx">[0]</div>
+              </div>
+              <div class="mem-cell">
+                <div class="mem-box">i</div>
+                <div class="mem-idx">[1]</div>
+              </div>
+              <div class="mem-cell">
+                <div class="mem-box">f</div>
+                <div class="mem-idx">[2]</div>
+              </div>
+              <div class="mem-cell">
+                <div class="mem-box">a</div>
+                <div class="mem-idx">[3]</div>
+              </div>
+              <div class="mem-cell">
+                <div class="mem-box">t</div>
+                <div class="mem-idx">[4]</div>
+              </div>
+              <div class="mem-cell">
+                <div class="mem-box">\0</div>
+                <div class="mem-idx">[5]</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- iv) Code -->
+          <div class="part part-code">
+            <div class="part-label"><span class="num">iv</span> উদাহরণ কোড</div>
+            <pre><span class="inc">#include</span> <span class="str">&lt;stdio.h&gt;</span>
+
+<span class="kw">int</span> <span class="fn">main</span>() {
+    <span class="kw">char</span> str[<span class="num">6</span>];   <span class="cm">// 6 ঘরের একটি string ডিক্লেয়ার হলো</span>
+    <span class="cm">// এখন str ব্যবহারের জন্য প্রস্তুত</span>
+    <span class="kw">return</span> <span class="num">0</span>;
+}</pre>
+            <div class="output-line">
+              <span class="output-label"
+                >// কোনো output নেই — শুধু মেমোরি তৈরি হয়েছে</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr />
+
+      <!-- ══════════════════ TOPIC 2: INITIALIZATION ══════════════════ -->
+      <div class="topic">
+        <div class="topic-title">
+          স্ট্রিং ইনিশিয়ালাইজেশন
+          <span class="badge">Initialization</span>
+        </div>
+        <div class="four-parts">
+          <div class="part part-def">
+            <div class="part-label">
+              <span class="num">i</span> সংজ্ঞা (Definition)
+            </div>
+            <p>
+              <strong>ইনিশিয়ালাইজেশন</strong> মানে হলো স্ট্রিং ডিক্লেয়ার করার
+              সময়ই তার ভেতরে মান (ডেটা) রেখে দেওয়া। দুইটি পদ্ধতিতে স্ট্রিং
+              ইনিশিয়ালাইজ করা যায় — (১) প্রতিটি অক্ষর আলাদাভাবে রাখা, অথবা (২)
+              double quotation <code>" "</code> ব্যবহার করে পুরো স্ট্রিং একসাথে
+              রাখা।
+            </p>
+          </div>
+
+          <div class="part part-syn">
+            <div class="part-label">
+              <span class="num">ii</span> সিনট্যাক্স (Syntax)
+            </div>
+            <pre><span class="cm">// পদ্ধতি ১ — প্রতিটি অক্ষর আলাদাভাবে</span>
+<span class="kw">char</span> str[<span class="num">6</span>] = {<span class="str">'S'</span>, <span class="str">'i'</span>, <span class="str">'f'</span>, <span class="str">'a'</span>, <span class="str">'t'</span>};
+
+<span class="cm">// পদ্ধতি ২ — double quotation দিয়ে (সহজ উপায়)</span>
+<span class="kw">char</span> str[<span class="num">6</span>] = <span class="str">"Sifat"</span>;</pre>
+            <p
+              style="
+                margin-top: 10px;
+                font-size: 14px;
+                color: var(--purple-800);
+              "
+            >
+              পদ্ধতি ২ বেশি ব্যবহার হয় কারণ এটি সহজ। <code>" "</code>-এর মধ্যে
+              স্ট্রিং লিখলে C নিজেই শেষে <code>'\0'</code> যোগ করে দেয়।
+            </p>
+          </div>
+
+          <div class="part part-real">
+            <div class="part-label">
+              <span class="num">iii</span> বাস্তব জীবনের উদাহরণ
+            </div>
+            <div class="analogy">
+              <div class="analogy-icon">📝</div>
+              <div>
+                মনে করো তোমার একটি নামের তালিকার খাতা আছে। তুমি দুইভাবে নাম
+                লিখতে পারো —
+                <strong>পদ্ধতি ১:</strong> প্রতিটি অক্ষর আলাদা ঘরে লেখা: S | i |
+                f | a | t | <strong>পদ্ধতি ২:</strong> সরাসরি লিখে দেওয়া:
+                <em>"Sifat"</em>. দুটোর ফলাফল একই, কিন্তু দ্বিতীয় পদ্ধতিটি অনেক
+                দ্রুত।
+              </div>
+            </div>
+          </div>
+
+          <div class="part part-code">
+            <div class="part-label"><span class="num">iv</span> উদাহরণ কোড</div>
+            <pre><span class="inc">#include</span> <span class="str">&lt;stdio.h&gt;</span>
+
+<span class="kw">int</span> <span class="fn">main</span>() {
+    <span class="cm">// পদ্ধতি ১</span>
+    <span class="kw">char</span> name1[<span class="num">6</span>] = {<span class="str">'S'</span>,<span class="str">'i'</span>,<span class="str">'f'</span>,<span class="str">'a'</span>,<span class="str">'t'</span>};
+
+    <span class="cm">// পদ্ধতি ২</span>
+    <span class="kw">char</span> name2[<span class="num">6</span>] = <span class="str">"Sifat"</span>;
+
+    <span class="fn">printf</span>(<span class="str">"%s\n"</span>, name1);
+    <span class="fn">printf</span>(<span class="str">"%s\n"</span>, name2);
+
+    <span class="kw">return</span> <span class="num">0</span>;
+}</pre>
+            <div class="output-line">
+              <span class="output-label">// Output:</span>
+              Sifat<br />Sifat
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr />
+
+      <!-- ══════════════════ TOPIC 3: PRINTING ══════════════════ -->
+      <div class="topic">
+        <div class="topic-title">
+          স্ট্রিং প্রিন্টিং
+          <span class="badge">Printing</span>
+        </div>
+        <div class="four-parts">
+          <div class="part part-def">
+            <div class="part-label">
+              <span class="num">i</span> সংজ্ঞা (Definition)
+            </div>
+            <p>
+              <strong>স্ট্রিং প্রিন্টিং</strong> মানে হলো স্ক্রিনে স্ট্রিং-এর
+              ভেতরের অক্ষরগুলো দেখানো। সাধারণ Array-এ লুপ চালিয়ে একটি একটি করে
+              প্রিন্ট করতে হয়, কিন্তু স্ট্রিং-এর একটি বড় সুবিধা হলো —
+              শুধুমাত্র <code>printf()</code> ফাংশনে <code>%s</code> ব্যবহার
+              করলেই পুরো স্ট্রিং একবারে প্রিন্ট হয়ে যায়।
+            </p>
+          </div>
+
+          <div class="part part-syn">
+            <div class="part-label">
+              <span class="num">ii</span> সিনট্যাক্স (Syntax)
+            </div>
+            <pre><span class="fn">printf</span>(<span class="str">"%s"</span>, str);
+
+<span class="cm">// %s  →  স্ট্রিং-এর format specifier</span>
+<span class="cm">// str →  যে string প্রিন্ট করতে চাই তার নাম</span></pre>
+          </div>
+
+          <div class="part part-real">
+            <div class="part-label">
+              <span class="num">iii</span> বাস্তব জীবনের উদাহরণ
+            </div>
+            <div class="analogy">
+              <div class="analogy-icon">🖨️</div>
+              <div>
+                মনে করো তুমি একটি ফটোকপি মেশিনে পুরো একটি পাতা দিয়ে দিলে। মেশিন
+                নিজেই পুরো পাতাটি প্রিন্ট করে দেবে — তোমাকে প্রতিটি অক্ষর আলাদা
+                করে বলতে হবে না।
+                <code>printf("%s", str)</code>-ও ঠিক তেমনই কাজ করে — একবার বললেই
+                পুরো স্ট্রিং প্রিন্ট।
+              </div>
+            </div>
+          </div>
+
+          <div class="part part-code">
+            <div class="part-label"><span class="num">iv</span> উদাহরণ কোড</div>
+            <pre><span class="inc">#include</span> <span class="str">&lt;stdio.h&gt;</span>
+
+<span class="kw">int</span> <span class="fn">main</span>() {
+    <span class="kw">char</span> str[<span class="num">20</span>] = <span class="str">"Hello, Sifat!"</span>;
+
+    <span class="fn">printf</span>(<span class="str">"%s\n"</span>, str);   <span class="cm">// পুরো string একবারে প্রিন্ট</span>
+
+    <span class="kw">return</span> <span class="num">0</span>;
+}</pre>
+            <div class="output-line">
+              <span class="output-label">// Output:</span>
+              Hello, Sifat!
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr />
+
+      <!-- ══════════════════ TOPIC 4: INPUT ══════════════════ -->
+      <div class="topic">
+        <div class="topic-title">
+          স্ট্রিং ইনপুট
+          <span class="badge">Input</span>
+        </div>
+        <div class="four-parts">
+          <div class="part part-def">
+            <div class="part-label">
+              <span class="num">i</span> সংজ্ঞা (Definition)
+            </div>
+            <p>
+              <strong>স্ট্রিং ইনপুট</strong> মানে হলো ব্যবহারকারীর কাছ থেকে
+              কীবোর্ড দিয়ে একটি শব্দ বা বাক্য নিয়ে প্রোগ্রামে স্টোর করা।
+              <code>scanf()</code> ফাংশন দিয়ে সহজেই স্ট্রিং ইনপুট নেওয়া যায়।
+              তবে মনে রাখতে হবে, <code>scanf("%s")</code> শুধুমাত্র একটি
+              <strong>শব্দ</strong> নেয় — স্পেস দেখলে থেমে যায়। পুরো বাক্য
+              নিতে <code>fgets()</code>
+              ব্যবহার করতে হয়।
+            </p>
+          </div>
+
+          <div class="part part-syn">
+            <div class="part-label">
+              <span class="num">ii</span> সিনট্যাক্স (Syntax)
+            </div>
+            <pre><span class="cm">// এক শব্দ ইনপুট নিতে</span>
+<span class="fn">scanf</span>(<span class="str">"%s"</span>, str);
+
+<span class="cm">// পুরো বাক্য ইনপুট নিতে (স্পেস সহ)</span>
+<span class="fn">fgets</span>(str, <span class="kw">sizeof</span>(str), stdin);</pre>
+            <p
+              style="
+                margin-top: 10px;
+                font-size: 14px;
+                color: var(--purple-800);
+              "
+            >
+              <code>scanf</code>-এ <code>int</code>-এর মতো
+              <code>&amp;</code> লাগে না, কারণ স্ট্রিং-এর নামই তার address।
+            </p>
+          </div>
+
+          <div class="part part-real">
+            <div class="part-label">
+              <span class="num">iii</span> বাস্তব জীবনের উদাহরণ
+            </div>
+            <div class="analogy">
+              <div class="analogy-icon">🎤</div>
+              <div>
+                মনে করো তুমি একটি ফর্ম পূরণ করছো। ফর্মে লেখা আছে "তোমার নাম
+                লেখো।" তুমি নাম লিখলে — সেটাই হলো ইনপুট। প্রোগ্রামে
+                <code>scanf("%s", str)</code> ঠিক এই কাজটি করে — কীবোর্ড থেকে
+                তোমার লেখা নামটি নিয়ে <code>str</code>-এ রেখে দেয়।
+              </div>
+            </div>
+          </div>
+
+          <div class="part part-code">
+            <div class="part-label"><span class="num">iv</span> উদাহরণ কোড</div>
+            <pre><span class="inc">#include</span> <span class="str">&lt;stdio.h&gt;</span>
+
+<span class="kw">int</span> <span class="fn">main</span>() {
+    <span class="kw">char</span> name[<span class="num">50</span>];
+
+    <span class="fn">printf</span>(<span class="str">"তোমার নাম লেখো: "</span>);
+    <span class="fn">scanf</span>(<span class="str">"%s"</span>, name);   <span class="cm">// ইনপুট নেওয়া হলো</span>
+
+    <span class="fn">printf</span>(<span class="str">"হ্যালো, %s!\n"</span>, name);
+    <span class="kw">return</span> <span class="num">0</span>;
+}</pre>
+            <div class="output-line">
+              <span class="output-label">// Input/Output:</span>
+              তোমার নাম লেখো: Sifat<br />হ্যালো, Sifat!
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr />
+
+      <!-- ══════════════════ TOPIC 5: strlen ══════════════════ -->
+      <div class="topic">
+        <div class="topic-title">
+          বিল্ট-ইন ফাংশন — <code style="font-size: 18px">strlen()</code>
+          <span class="badge">String Length</span>
+        </div>
+        <div class="four-parts">
+          <div class="part part-def">
+            <div class="part-label">
+              <span class="num">i</span> সংজ্ঞা (Definition)
+            </div>
+            <p>
+              <code>strlen()</code> ফাংশন একটি স্ট্রিং-এর
+              <strong>দৈর্ঘ্য</strong> (কতটি ক্যারেক্টার আছে) বের করে দেয়। এটি
+              <code>string.h</code> হেডার ফাইলে থাকে। গুরুত্বপূর্ণ বিষয় হলো —
+              <code>strlen()</code> Null Terminator (<code>'\0'</code>) গণনা করে
+              না। তাই "Sifat"-এর length হবে <strong>5</strong>, 6 নয়।
+            </p>
+          </div>
+
+          <div class="part part-syn">
+            <div class="part-label">
+              <span class="num">ii</span> সিনট্যাক্স (Syntax)
+            </div>
+            <pre><span class="inc">#include</span> <span class="str">&lt;string.h&gt;</span>   <span class="cm">// এই header ফাইল যোগ করতে হবে</span>
+
+<span class="fn">strlen</span>(str);   <span class="cm">// str-এর দৈর্ঘ্য return করে</span>
+
+<span class="cm">// সাধারণত এভাবে ব্যবহার করা হয়:</span>
+<span class="kw">int</span> len = <span class="fn">strlen</span>(str);</pre>
+          </div>
+
+          <div class="part part-real">
+            <div class="part-label">
+              <span class="num">iii</span> বাস্তব জীবনের উদাহরণ
+            </div>
+            <div class="analogy">
+              <div class="analogy-icon">📏</div>
+              <div>
+                মনে করো তুমি একটি সুতার দৈর্ঘ্য মাপতে চাও। তুমি একটি স্কেল নিয়ে
+                মেপে বললে — "এটি ৫ সেমি লম্বা।" <code>strlen()</code> ঠিক এই
+                কাজটি করে — স্ট্রিং-এর মধ্যে কতটি অক্ষর আছে তা গণনা করে জানিয়ে
+                দেয়।
+              </div>
+            </div>
+            <div class="mem-diagram" style="margin-top: 12px">
+              <div class="mem-cell">
+                <div class="mem-box">S</div>
+                <div class="mem-idx">1</div>
+              </div>
+              <div class="mem-cell">
+                <div class="mem-box">i</div>
+                <div class="mem-idx">2</div>
+              </div>
+              <div class="mem-cell">
+                <div class="mem-box">f</div>
+                <div class="mem-idx">3</div>
+              </div>
+              <div class="mem-cell">
+                <div class="mem-box">a</div>
+                <div class="mem-idx">4</div>
+              </div>
+              <div class="mem-cell">
+                <div class="mem-box">t</div>
+                <div class="mem-idx">5</div>
+              </div>
+              <div class="mem-cell">
+                <div class="mem-box">\0</div>
+                <div class="mem-idx">✗</div>
+              </div>
+            </div>
+            <p style="font-size: 13px; color: var(--teal-800); margin-top: 6px">
+              → strlen() = <strong>5</strong> (শুধু অক্ষর গণনা হয়, \0 নয়)
+            </p>
+          </div>
+
+          <div class="part part-code">
+            <div class="part-label"><span class="num">iv</span> উদাহরণ কোড</div>
+            <pre><span class="inc">#include</span> <span class="str">&lt;stdio.h&gt;</span>
+<span class="inc">#include</span> <span class="str">&lt;string.h&gt;</span>
+
+<span class="kw">int</span> <span class="fn">main</span>() {
+    <span class="kw">char</span> str[<span class="num">100</span>] = <span class="str">"Sifat"</span>;
+
+    <span class="kw">int</span> len = <span class="fn">strlen</span>(str);
+    <span class="fn">printf</span>(<span class="str">"দৈর্ঘ্য: %d\n"</span>, len);
+
+    <span class="kw">return</span> <span class="num">0</span>;
+}</pre>
+            <div class="output-line">
+              <span class="output-label">// Output:</span>
+              দৈর্ঘ্য: 5
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr />
+
+      <!-- ══════════════════ TOPIC 6: strcpy ══════════════════ -->
+      <div class="topic">
+        <div class="topic-title">
+          বিল্ট-ইন ফাংশন — <code style="font-size: 18px">strcpy()</code>
+          <span class="badge">String Copy</span>
+        </div>
+        <div class="four-parts">
+          <div class="part part-def">
+            <div class="part-label">
+              <span class="num">i</span> সংজ্ঞা (Definition)
+            </div>
+            <p>
+              <code>strcpy()</code> ফাংশন একটি স্ট্রিং-কে অন্য একটি স্ট্রিং-এ
+              <strong>কপি</strong> করে। এটিও <code>string.h</code> হেডার ফাইলে
+              থাকে। কপি করার পর
+              <strong
+                >destination (যেখানে কপি হবে) স্ট্রিংটি source-এর মতো হয়ে
+                যায়</strong
+              >। মনে রাখতে হবে, destination-এর সাইজ অবশ্যই source-এর চেয়ে বড়
+              বা সমান হতে হবে।
+            </p>
+          </div>
+
+          <div class="part part-syn">
+            <div class="part-label">
+              <span class="num">ii</span> সিনট্যাক্স (Syntax)
+            </div>
+            <pre><span class="fn">strcpy</span>(destination, source);
+
+<span class="cm">// destination → যেখানে কপি হবে</span>
+<span class="cm">// source      → যেটা কপি করা হবে</span></pre>
+          </div>
+
+          <div class="part part-real">
+            <div class="part-label">
+              <span class="num">iii</span> বাস্তব জীবনের উদাহরণ
+            </div>
+            <div class="analogy">
+              <div class="analogy-icon">📋</div>
+              <div>
+                মনে করো তোমার বন্ধুর খাতায় একটি সুন্দর নোট আছে। তুমি সেই নোটটি
+                তোমার খাতায় হুবহু নকল করলে। এখন তোমার খাতায়ও একই নোট আছে।
+                <code>strcpy(str1, str2)</code> ঠিক এই কাজটি করে —
+                <code>str2</code>-এর সব অক্ষর <code>str1</code>-এ কপি করে দেয়।
+              </div>
+            </div>
+            <div
+              style="
+                margin-top: 12px;
+                display: flex;
+                align-items: center;
+                gap: 16px;
+                flex-wrap: wrap;
+              "
+            >
+              <div>
+                <div
+                  style="
+                    font-size: 12px;
+                    color: var(--teal-800);
+                    margin-bottom: 4px;
+                  "
+                >
+                  str1 (আগে): "Sifat"
+                </div>
+                <div style="display: flex">
+                  <div class="mem-cell"><div class="mem-box">S</div></div>
+                  <div class="mem-cell"><div class="mem-box">i</div></div>
+                  <div class="mem-cell"><div class="mem-box">f</div></div>
+                  <div class="mem-cell"><div class="mem-box">a</div></div>
+                  <div class="mem-cell"><div class="mem-box">t</div></div>
+                </div>
+              </div>
+              <div style="font-size: 22px; color: var(--teal-600)">→</div>
+              <div>
+                <div
+                  style="
+                    font-size: 12px;
+                    color: var(--teal-800);
+                    margin-bottom: 4px;
+                  "
+                >
+                  str1 (পরে): "Pias" ✅
+                </div>
+                <div style="display: flex">
+                  <div class="mem-cell">
+                    <div
+                      class="mem-box"
+                      style="
+                        background: var(--coral-50);
+                        color: var(--coral-800);
+                        border-color: var(--coral-600);
+                      "
+                    >
+                      P
+                    </div>
+                  </div>
+                  <div class="mem-cell">
+                    <div
+                      class="mem-box"
+                      style="
+                        background: var(--coral-50);
+                        color: var(--coral-800);
+                        border-color: var(--coral-600);
+                      "
+                    >
+                      i
+                    </div>
+                  </div>
+                  <div class="mem-cell">
+                    <div
+                      class="mem-box"
+                      style="
+                        background: var(--coral-50);
+                        color: var(--coral-800);
+                        border-color: var(--coral-600);
+                      "
+                    >
+                      a
+                    </div>
+                  </div>
+                  <div class="mem-cell">
+                    <div
+                      class="mem-box"
+                      style="
+                        background: var(--coral-50);
+                        color: var(--coral-800);
+                        border-color: var(--coral-600);
+                      "
+                    >
+                      s
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="part part-code">
+            <div class="part-label"><span class="num">iv</span> উদাহরণ কোড</div>
+            <pre><span class="inc">#include</span> <span class="str">&lt;stdio.h&gt;</span>
+<span class="inc">#include</span> <span class="str">&lt;string.h&gt;</span>
+
+<span class="kw">int</span> <span class="fn">main</span>() {
+    <span class="kw">char</span> str1[<span class="num">100</span>] = <span class="str">"Sifat"</span>;
+    <span class="kw">char</span> str2[<span class="num">100</span>] = <span class="str">"Pias"</span>;
+
+    <span class="fn">strcpy</span>(str1, str2);   <span class="cm">// str2 → str1-এ কপি হবে</span>
+
+    <span class="fn">printf</span>(<span class="str">"%s\n"</span>, str1);  <span class="cm">// str1 এখন "Pias"</span>
+    <span class="kw">return</span> <span class="num">0</span>;
+}</pre>
+            <div class="output-line">
+              <span class="output-label">// Output:</span>
+              Pias
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr />
+
+      <!-- ══════════════════ TOPIC 7: strcat ══════════════════ -->
+      <div class="topic">
+        <div class="topic-title">
+          বিল্ট-ইন ফাংশন — <code style="font-size: 18px">strcat()</code>
+          <span class="badge">String Concatenate</span>
+        </div>
+        <div class="four-parts">
+          <div class="part part-def">
+            <div class="part-label">
+              <span class="num">i</span> সংজ্ঞা (Definition)
+            </div>
+            <p>
+              <code>strcat()</code> ফাংশন একটি স্ট্রিং-এর
+              <strong>শেষে আরেকটি স্ট্রিং জোড়া লাগায়</strong>। এটিও
+              <code>string.h</code>-এ থাকে। উদাহরণস্বরূপ, "Sifat" + "Pias" =
+              "SifatPias"। এক্ষেত্রে destination (<code>str1</code>) স্ট্রিং-এর
+              সাইজ এতটাই বড় হতে হবে যাতে দুটো স্ট্রিং একসাথে ধরে।
+            </p>
+          </div>
+
+          <div class="part part-syn">
+            <div class="part-label">
+              <span class="num">ii</span> সিনট্যাক্স (Syntax)
+            </div>
+            <pre><span class="fn">strcat</span>(str1, str2);
+
+<span class="cm">// str1-এর শেষে str2 জোড়া লাগবে</span>
+<span class="cm">// ফলাফল str1-এ জমা হবে</span></pre>
+          </div>
+
+          <div class="part part-real">
+            <div class="part-label">
+              <span class="num">iii</span> বাস্তব জীবনের উদাহরণ
+            </div>
+            <div class="analogy">
+              <div class="analogy-icon">🔗</div>
+              <div>
+                মনে করো তোমার কাছে দুটো LEGO ব্লক আছে — একটিতে লেখা "Sifat",
+                আরেকটিতে "Pias"। তুমি দুটো ব্লক জোড়া লাগালে পেলে "SifatPias"।
+                <code>strcat(str1, str2)</code> ঠিক এভাবে দুটো স্ট্রিংকে একসাথে
+                জোড়া লাগায়।
+              </div>
+            </div>
+            <div
+              style="
+                margin-top: 12px;
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                flex-wrap: wrap;
+              "
+            >
+              <div style="display: flex">
+                <div class="mem-cell"><div class="mem-box">S</div></div>
+                <div class="mem-cell"><div class="mem-box">i</div></div>
+                <div class="mem-cell"><div class="mem-box">f</div></div>
+                <div class="mem-cell"><div class="mem-box">a</div></div>
+                <div class="mem-cell"><div class="mem-box">t</div></div>
+              </div>
+              <div style="font-size: 20px; color: var(--teal-600)">+</div>
+              <div style="display: flex">
+                <div class="mem-cell">
+                  <div
+                    class="mem-box"
+                    style="
+                      background: var(--coral-50);
+                      color: var(--coral-800);
+                      border-color: var(--coral-600);
+                    "
+                  >
+                    P
+                  </div>
+                </div>
+                <div class="mem-cell">
+                  <div
+                    class="mem-box"
+                    style="
+                      background: var(--coral-50);
+                      color: var(--coral-800);
+                      border-color: var(--coral-600);
+                    "
+                  >
+                    i
+                  </div>
+                </div>
+                <div class="mem-cell">
+                  <div
+                    class="mem-box"
+                    style="
+                      background: var(--coral-50);
+                      color: var(--coral-800);
+                      border-color: var(--coral-600);
+                    "
+                  >
+                    a
+                  </div>
+                </div>
+                <div class="mem-cell">
+                  <div
+                    class="mem-box"
+                    style="
+                      background: var(--coral-50);
+                      color: var(--coral-800);
+                      border-color: var(--coral-600);
+                    "
+                  >
+                    s
+                  </div>
+                </div>
+              </div>
+              <div style="font-size: 20px; color: var(--teal-600)">=</div>
+              <div style="display: flex">
+                <div class="mem-cell"><div class="mem-box">S</div></div>
+                <div class="mem-cell"><div class="mem-box">i</div></div>
+                <div class="mem-cell"><div class="mem-box">f</div></div>
+                <div class="mem-cell"><div class="mem-box">a</div></div>
+                <div class="mem-cell"><div class="mem-box">t</div></div>
+                <div class="mem-cell">
+                  <div
+                    class="mem-box"
+                    style="
+                      background: var(--coral-50);
+                      color: var(--coral-800);
+                      border-color: var(--coral-600);
+                    "
+                  >
+                    P
+                  </div>
+                </div>
+                <div class="mem-cell">
+                  <div
+                    class="mem-box"
+                    style="
+                      background: var(--coral-50);
+                      color: var(--coral-800);
+                      border-color: var(--coral-600);
+                    "
+                  >
+                    i
+                  </div>
+                </div>
+                <div class="mem-cell">
+                  <div
+                    class="mem-box"
+                    style="
+                      background: var(--coral-50);
+                      color: var(--coral-800);
+                      border-color: var(--coral-600);
+                    "
+                  >
+                    a
+                  </div>
+                </div>
+                <div class="mem-cell">
+                  <div
+                    class="mem-box"
+                    style="
+                      background: var(--coral-50);
+                      color: var(--coral-800);
+                      border-color: var(--coral-600);
+                    "
+                  >
+                    s
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="part part-code">
+            <div class="part-label"><span class="num">iv</span> উদাহরণ কোড</div>
+            <pre><span class="inc">#include</span> <span class="str">&lt;stdio.h&gt;</span>
+<span class="inc">#include</span> <span class="str">&lt;string.h&gt;</span>
+
+<span class="kw">int</span> <span class="fn">main</span>() {
+    <span class="kw">char</span> str1[<span class="num">100</span>] = <span class="str">"Sifat"</span>;   <span class="cm">// বড় সাইজ দিতে হবে!</span>
+    <span class="kw">char</span> str2[<span class="num">100</span>] = <span class="str">"Pias"</span>;
+
+    <span class="fn">strcat</span>(str1, str2);   <span class="cm">// str1-এর শেষে str2 যুক্ত হবে</span>
+
+    <span class="fn">printf</span>(<span class="str">"%s\n"</span>, str1);
+    <span class="kw">return</span> <span class="num">0</span>;
+}</pre>
+            <div class="output-line">
+              <span class="output-label">// Output:</span>
+              SifatPias
+            </div>
+          </div>
+        </div>
+
+        <div class="note">
+          ⚠️ <strong>সাবধান:</strong> <code>str1</code>-এর সাইজ অবশ্যই
+          <code>str1</code> ও <code>str2</code>-এর মোট অক্ষর সংখ্যার চেয়ে বড়
+          হতে হবে। নইলে মেমোরি সমস্যা হতে পারে!
+        </div>
+      </div>
+
+      <hr />
+
+      <!-- ══════════════════ SUMMARY TABLE ══════════════════ -->
+      <div class="topic">
+        <div class="topic-title">দ্রুত রিভিউ — সব ফাংশন একনজরে</div>
+        <table class="summary-table">
+          <thead>
+            <tr>
+              <th>ফাংশন</th>
+              <th>কাজ</th>
+              <th>উদাহরণ</th>
+              <th>Output</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>strlen(str)</td>
+              <td>দৈর্ঘ্য বের করে</td>
+              <td>strlen("Sifat")</td>
+              <td>5</td>
+            </tr>
+            <tr>
+              <td>strcpy(s1, s2)</td>
+              <td>s2 → s1-এ কপি</td>
+              <td>strcpy(s1, "Pias")</td>
+              <td>s1 = "Pias"</td>
+            </tr>
+            <tr>
+              <td>strcat(s1, s2)</td>
+              <td>s1-এর শেষে s2 যোগ</td>
+              <td>strcat("Sifat","Pias")</td>
+              <td>"SifatPias"</td>
+            </tr>
+            <tr>
+              <td>printf("%s", str)</td>
+              <td>স্ক্রিনে দেখায়</td>
+              <td>printf("%s", "Hi")</td>
+              <td>Hi</td>
+            </tr>
+            <tr>
+              <td>scanf("%s", str)</td>
+              <td>কীবোর্ড থেকে নেয়</td>
+              <td>scanf("%s", name)</td>
+              <td>—</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>
+
+    #include <stdio.h>
+
+    int main() {
+        // পদ্ধতি ১
+        char name1[6] = {'S','i','f','a','t'};
+
+        // পদ্ধতি ২
+        char name2[6] = "Sifat";
+
+        printf("%s\n", name1);
+        printf("%s\n", name2);
+
+        return 0;
+    }
+
+    // Output:
+    Sifat
+    Sifat
+
+
+    printf("%s", str);
+
+    // %s  →  স্ট্রিং-এর format specifier
+    // str →  যে string প্রিন্ট করতে চাই তার নাম
+
+
+    // এক শব্দ ইনপুট নিতে
+    scanf("%s", str);
+
+    #include <stdio.h>
+
+    int main() {
+        char name[50];
+
+        printf("তোমার নাম লেখো: ");
+        scanf("%s", name);   // ইনপুট নেওয়া হলো
+
+        printf("হ্যালো, %s!\n", name);
+        return 0;
+    }
+    // Input/Output:
+    তোমার নাম লেখো: Sifat
+    হ্যালো, Sifat!
+
+    #include <string.h>   // এই header ফাইল যোগ করতে হবে
+
+    strlen(str);   // str-এর দৈর্ঘ্য return করে
+
+    // সাধারণত এভাবে ব্যবহার করা হয়:
+    int len = strlen(str);
+
+
+
+    #include <stdio.h>
+    #include <string.h>
+
+    int main() {
+        char str[100] = "Sifat";
+
+        int len = strlen(str);
+        printf("দৈর্ঘ্য: %d\n", len);
+
+        return 0;
+    }
+    // Output:
+    দৈর্ঘ্য: 5
+
+    strcpy(destination, source);
+
+    // destination → যেখানে কপি হবে
+    // source      → যেটা কপি করা হবে
+
+
+    #include <stdio.h>
+    #include <string.h>
+
+    int main() {
+        char str1[100] = "Sifat";
+        char str2[100] = "Pias";
+
+        strcpy(str1, str2);   // str2 → str1-এ কপি হবে
+
+        printf("%s\n", str1);  // str1 এখন "Pias"
+        return 0;
+    }
+    // Output:
+    Pias
+
+
+    strcat(str1, str2);
+
+    // str1-এর শেষে str2 জোড়া লাগবে
+    // ফলাফল str1-এ জমা হবে
+
+    #include <stdio.h>
+    #include <string.h>
+
+    int main() {
+        char str1[100] = "Sifat";   // বড় সাইজ দিতে হবে!
+        char str2[100] = "Pias";
+
+        strcat(str1, str2);   // str1-এর শেষে str2 যুক্ত হবে
+
+        printf("%s\n", str1);
+        return 0;
+    }
+    // Output:
+    SifatPias
+    

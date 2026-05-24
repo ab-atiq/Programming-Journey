@@ -1,0 +1,41 @@
+/*
+________________________
+|                      |
+|     AB Atiq          |
+|______________________|
+*/
+
+// Problem link: https://www.codechef.com/problems/ADJSUM
+
+#include <bits/stdc++.h>
+#define ll long long int
+using namespace std;
+int main()
+{
+    int tc;
+    cin >> tc;
+    while (tc--)
+    {
+        ll n;
+        cin >> n;
+        vector<ll> a(n);
+        for (int i = 0; i < n; i++)
+        {
+            cin >> a[i];
+        }
+        vector<ll> dp(n);
+        dp[0] = a[0];
+        for (int i = 1; i < n; i++)
+        {
+            ll cost1 = a[i] + dp[i - 1];
+            ll cost2 = labs(a[i] - a[i - 1]);
+            if (i >= 2)
+                cost2 += a[i - 2];
+            if (i >= 3)
+                cost2 += dp[i - 3];
+            dp[i] = min(cost1, cost2);
+        }
+        cout << dp[n - 1] << endl;
+    }
+    return 0;
+}
