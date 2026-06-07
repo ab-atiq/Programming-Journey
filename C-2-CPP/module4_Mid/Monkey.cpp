@@ -157,6 +157,27 @@ int main() {
 }
 
 
+#include <iostream>
+#include <string>
+#include <algorithm>
+
+int main() {
+    std::string str;
+    // Using getline with std::string is safer and easier
+    while (std::getline(std::cin, str)) {
+        // Remove spaces first
+        str.erase(std::remove(str.begin(), str.end(), ' '), str.end());
+        
+        // Sort the remaining characters
+        std::sort(str.begin(), str.end());
+        
+        // Output the result
+        std::cout << str << std::endl;
+    }
+    return 0;
+}
+
+
 
 /*
 ✅ Using cin.getline() (C-style strings):
