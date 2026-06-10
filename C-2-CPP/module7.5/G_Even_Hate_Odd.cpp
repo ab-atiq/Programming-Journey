@@ -30,9 +30,14 @@ int main()
         else
         {
             // Need to make both counts = n/2
-            int needed = n / 2;
+            // int needed = n / 2;
+            
             // Convert from the larger side
-            cout << abs(even - needed) << endl;
+            // cout << abs(even - needed) << endl;
+            // cout << abs(odd - needed) << endl;
+
+            // operation needed
+            cout << abs(even - odd) / 2 << endl;
         }
     }
 

@@ -12,7 +12,8 @@ int main()
     // Read the word to search
     cin >> wordToFind;
 
-    istringstream ss(sentence); // breaks sentence into words
+    // istringstream ss(sentence); // breaks sentence into words
+    stringstream ss(sentence);
 
     int count = 0;
     string word;
@@ -27,6 +28,7 @@ int main()
     cout << count << endl;
     return 0;
 }
+
 /*  
 input:
 Sanju Samson shamanta samson jessica Bhatta Asif John takla john abraham john baby Shark tank 

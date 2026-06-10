@@ -25,7 +25,27 @@ int main()
     }
 
     // sort(a, a + n);
-    reverse(a, a + n);
+    // solution 1
+    // reverse(a, a + n);
+
+    // solution 2 - reverse using two pointer approach
+    int s = 0, e = n - 1;
+    while (s < e)
+    {
+        // swap(a[s], a[e]);  // correct
+
+        // correct
+        // swap(a[s].name, a[e].name);
+        // swap(a[s].roll, a[e].roll);
+        // swap(a[s].marks, a[e].marks);
+
+        // also correct
+        Student temp = a[s];
+        a[s] = a[e];
+        a[e] = temp;
+        s++;
+        e--;
+    }
 
     for (int i = 0; i < n; i++)
     {
@@ -35,8 +55,7 @@ int main()
     return 0;
 }
 
-
-/*  
+/*
 input
 5
 Asif 29 95
