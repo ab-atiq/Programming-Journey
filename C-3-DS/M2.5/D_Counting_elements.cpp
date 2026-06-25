@@ -53,3 +53,35 @@ int main()
     cout << count << endl;
     return 0;
 }
+
+// solve using frequency array
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main()
+{
+    int n;
+    cin >> n;
+
+    vector<int> a(n);
+    vector<int> freq(1005, 0);
+
+    for (int i = 0; i < n; i++)
+    {
+        cin >> a[i];
+        freq[a[i]]++;
+    }
+
+    int count = 0;
+    for (int i = 0; i < n; i++)
+    {
+        if (freq[a[i] + 1] > 0)
+        {
+            count++;
+        }
+    }
+
+    cout << count << endl;
+    return 0;
+}
