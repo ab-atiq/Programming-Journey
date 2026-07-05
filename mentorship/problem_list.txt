@@ -3,6 +3,9 @@ Basic problem solving Contest 1
 Link: https://vjudge.net/contest/771932
 password: mentor_atiqur
 
+Link: https://vjudge.net/contest/827891
+password: mentor_atiqur
+
 1. https://www.codechef.com/problems/MVR - math + conditional statements
 2. https://www.codechef.com/problems/FUELCHK - if-else statements
 3. https://www.codechef.com/problems/RIP2000 - math
