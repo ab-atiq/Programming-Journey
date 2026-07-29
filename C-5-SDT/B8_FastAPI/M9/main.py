@@ -74,7 +74,7 @@ def update_todos(db : db_dependency, todo_id : int, update_todo : TodoUpdate):
 
 
 @app.delete('/delete/{todo_id}')
-def update_todos(db : db_dependency, todo_id : int):
+def delete_todos(db : db_dependency, todo_id : int):
 
     todo = db.query(Todos).filter(Todos.id == todo_id).first()
     if todo is  None:

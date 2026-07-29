@@ -9,6 +9,10 @@ from passlib.context import CryptContext
 
 router = APIRouter()
 
+# @router.get('/auth')
+# def authentication():
+#     return {'user' : 'Authenticated route'}
+
 bcrypt_context = CryptContext(schemes=['bcrypt'], deprecated='auto')
 
 class CreateUsers(BaseModel):

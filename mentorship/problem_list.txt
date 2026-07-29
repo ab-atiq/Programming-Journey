@@ -14,8 +14,8 @@ password: mentor_atiqur
 6. https://www.codechef.com/problems/OFFBY1 - conditional statements or input output handling
 7. https://www.codechef.com/problems/ERROR404 - conditional statements
 8. https://www.codechef.com/problems/P1149 - conditional statements
-9. https://www.codechef.com/problems/CHRBUY - test cases and conditionals
-10. https://www.codechef.com/problems/WOLFDOWN - count all zero before first one
+9. https://www.codechef.com/problems/CHRBUY - test cases and conditionals - https://youtu.be/NbSrlyfhIEU
+10. https://www.codechef.com/problems/WOLFDOWN - count all zero before first one - https://youtu.be/WZge87odGJQ
 
 ---------------------------------------------------------
 Basic problem solving Contest 2 
@@ -23,13 +23,17 @@ Basic problem solving Contest 2
 Link: https://vjudge.net/contest/775956
 password: mentor_atiqur
 
+Basic Problem Solving Contest - 2 (Phitron mentorship-B9) - previous contest 2+3
+https://vjudge.net/contest/829794
+password: mentor_atiqur
+
 1. https://www.codechef.com/problems/GAMBLING - 7-a
-2. https://www.codechef.com/problems/NUGGET 
+2. https://www.codechef.com/problems/NUGGET - 5000*X + 9800*Y
 3. https://www.codechef.com/problems/IPLTRSH
-4. https://www.codechef.com/problems/TOURIST - manhattan distance
+4. https://www.codechef.com/problems/TOURIST - manhattan distance - https://youtu.be/III1ELVu2dM
 5. https://www.codechef.com/problems/HATTRICK - module
-6. https://www.codechef.com/problems/GCEA - module
-7. https://www.codechef.com/problems/SINGLEUSE - module
+6. https://www.codechef.com/problems/GCEA - module - https://youtu.be/as0dwNVMbMo
+7. https://www.codechef.com/problems/SINGLEUSE - module - 
 8. https://www.codechef.com/problems/DICENUM 
 9. https://www.codechef.com/problems/EXAMCHEF
 10. https://www.codechef.com/problems/SPCP2
@@ -49,13 +53,18 @@ password: mentor_atiqur
 6. https://www.codechef.com/problems/P1149 - duplicate of contest 1 problem 8
 7. https://www.codechef.com/problems/AGEING
 8. https://www.codechef.com/problems/CHESS_PAIR
-9. https://www.codechef.com/problems/DICENUM 
+9. https://www.codechef.com/problems/DICENUM - ❌
 10. https://www.codechef.com/problems/FAIRSHARE
 
 ---------------------------------------------------------
 Basic problem solving Contest 4
 ---------------------------------------------------------
 Link: https://vjudge.net/contest/780287
+password: mentor_atiqur
+---------------------------------------------------------
+Basic problem solving Contest 3 - b9
+---------------------------------------------------------
+Link: https://vjudge.net/contest/835323
 password: mentor_atiqur
 
 1. https://atcoder.jp/contests/abc235/tasks/abc235_a
