@@ -1,0 +1,143 @@
+মিড্ এক্সাম question 
+# Mid Term Exam
+
+**Total Marks:** 100  
+**Date:** 8-11-2024
+
+| Q.No | QUESTIONS | Marks |
+|------|-----------|------:|
+| **1** | Explain the difference between **Primary Key** and **Foreign Key** in SQL. | **5** |
+| **2** | What is a **Self Join**? Provide an example using the **employees** table to list employees who share the same **manager ID**, showing only their **first names** and **manager IDs**. | **5** |
+| **3** | **Create a table of Employees** which has the following fields: <br> a. Employee_Id <br> b. First Name <br> c. Last Name <br> d. Date of Birth <br> e. Department Id <br> f. Salary <br><br> **Create a table Projects** with the following fields: <br> a. Project ID <br> b. Project Name <br> c. Start Date <br> d. End Date <br> e. Budget <br><br> **Create a table Employee_Projects** with the following fields: <br> a. Employee ID <br> b. Project ID <br><br> Ensure that **each employee can work on multiple projects and a project can have multiple employees.** | **20** |
+| | **Use dummydb in MySQL to answer the following questions:** **DUMMY_DATABASE.sql** | |
+| **4** | Using the **dummydb**, write an SQL query to get the **third-highest salary** in the **employees** table. | **8** |
+| **5** | Write a query to show the **department names** and the **number of employees** in each department. | **10** |
+| **6** | Illustrate **INNER JOIN, LEFT JOIN, RIGHT JOIN, and CROSS JOIN** with examples using the **employees** and **departments** tables. | **14** |
+| **7** | What is a **Common Table Expression (CTE)**? Write an example query using **CTE** to show the names of employees whose salary is **higher than the average salary**. | **8** |
+| **8** | Write a query to display the names of employees who earn a salary **less than the employee "Steven King"**. | **10** |
+| **9** | Write a query to find the **department names** and the **names of the managers** for each department. | **10** |
+| **10** | Write a query to display the names of **all cities where departments are located**. | **10** |
+
+
+sql টেবিল কম্যান্ড  (DUMMY_DATABASE.sql) অনুযায়ী:
+/* ********CREATING TABLES************** */
+CREATE TABLE regions (
+	region_id INT (11) UNSIGNED NOT NULL,
+	region_name VARCHAR(25),
+	PRIMARY KEY (region_id)
+	);
+
+CREATE TABLE countries (
+	country_id CHAR(2) NOT NULL,
+	country_name VARCHAR(40),
+	region_id INT (11) UNSIGNED NOT NULL,
+	PRIMARY KEY (country_id)
+);
+
+
+CREATE TABLE locations (
+	location_id INT (11) UNSIGNED NOT NULL AUTO_INCREMENT,
+	street_address VARCHAR(40),
+	postal_code VARCHAR(12),
+	city VARCHAR(30) NOT NULL,
+	state_province VARCHAR(25),
+	country_id CHAR(2) NOT NULL,
+	PRIMARY KEY (location_id)
+	);
+
+CREATE TABLE departments (
+	department_id INT (11) UNSIGNED NOT NULL,
+	department_name VARCHAR(30) NOT NULL,
+	manager_id INT (11) UNSIGNED,
+	location_id INT (11) UNSIGNED,
+	PRIMARY KEY (department_id)
+	);
+
+CREATE TABLE jobs (
+	job_id VARCHAR(10) NOT NULL,
+	job_title VARCHAR(35) NOT NULL,
+	min_salary DECIMAL(8, 0) UNSIGNED,
+	max_salary DECIMAL(8, 0) UNSIGNED,
+	PRIMARY KEY (job_id)
+	);
+
+CREATE TABLE employees (
+	employee_id INT (11) UNSIGNED NOT NULL,
+	first_name VARCHAR(20),
+	last_name VARCHAR(25) NOT NULL,
+	email VARCHAR(25) NOT NULL,
+	phone_number VARCHAR(20),
+	hire_date DATE NOT NULL,
+	job_id VARCHAR(10) NOT NULL,
+	salary DECIMAL(8, 2) NOT NULL,
+	commission_pct DECIMAL(2, 2),
+	manager_id INT (11) UNSIGNED,
+	department_id INT (11) UNSIGNED,
+	PRIMARY KEY (employee_id)
+	);
+
+CREATE TABLE job_history (
+	employee_id INT (11) UNSIGNED NOT NULL,
+	start_date DATE NOT NULL,
+	end_date DATE NOT NULL,
+	job_id VARCHAR(10) NOT NULL,
+	department_id INT (11) UNSIGNED NOT NULL
+	);
+
+ALTER TABLE job_history ADD UNIQUE INDEX (
+	employee_id,
+	start_date
+	);
+
+
+CREATE VIEW emp_details_view
+AS
+SELECT e.employee_id,
+	e.job_id,
+	e.manager_id,
+	e.department_id,
+	d.location_id,
+	l.country_id,
+	e.first_name,
+	e.last_name,
+	e.salary,
+	e.commission_pct,
+	d.department_name,
+	j.job_title,
+	l.city,
+	l.state_province,
+	c.country_name,
+	r.region_name
+FROM employees e,
+	departments d,
+	jobs j,
+	locations l,
+	countries c,
+	regions r
+WHERE e.department_id = d.department_id
+	AND d.location_id = l.location_id
+	AND l.country_id = c.country_id
+	AND c.region_id = r.region_id
+	AND j.job_id = e.job_id;
+
+
+/* ********FOREIGN KEYS********** */
+
+ALTER TABLE countries ADD FOREIGN KEY (region_id) REFERENCES regions(region_id);    
+ALTER TABLE locations ADD FOREIGN KEY (country_id) REFERENCES countries(country_id);
+ALTER TABLE departments ADD FOREIGN KEY (location_id) REFERENCES locations(location_id);
+ALTER TABLE employees ADD FOREIGN KEY (job_id) REFERENCES jobs(job_id);
+ALTER TABLE employees ADD FOREIGN KEY (department_id) REFERENCES departments(department_id);
+ALTER TABLE employees ADD FOREIGN KEY (manager_id) REFERENCES employees(employee_id);
+ALTER TABLE departments ADD FOREIGN KEY (manager_id) REFERENCES employees (employee_id);
+ALTER TABLE job_history ADD FOREIGN KEY (employee_id) REFERENCES employees(employee_id);
+ALTER TABLE job_history ADD FOREIGN KEY (job_id) REFERENCES jobs(job_id);
+ALTER TABLE job_history ADD FOREIGN KEY (department_id) REFERENCES departments(department_id);
+
+
+আমি ওপরের টেক্সট এ মিড এক্সাম এর প্রশ্ন দিয়েছি এবং ডাটাবেস এর টেবিল তৈরী করার কম্যান্ড দিয়েছে। এখন মিড্ এক্সাম question এ যেই requirement এবং details এর যা আছে তা অবশ্যই ইমপ্লিমেন্ট করা থাকতে হবে। আমি কিছু solution দিবো তুমি দেখবা কি কি miss আছে। যদি মিস না থাকে তাহলে ১০০ মার্ক দিবো অন্যথায় যেই যেই পার্ট মিস করছে তা ছোট করে নোট দাও এবং মিস পার্ট এর ওপর ভিত্তি করে মার্ক কেটে নাও এবং কত মার্ক দেয়া যায় তা বলো
+
+give me feedback in bangla and short summary. aslo provide missing part of code and correct code shortly. when provide feedback student so that they can understand easily and fixed there mistake. 
+
+
+first solution:

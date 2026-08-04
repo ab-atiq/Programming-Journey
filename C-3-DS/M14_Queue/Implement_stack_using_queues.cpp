@@ -1,34 +1,102 @@
-class MyStack {
+// https://leetcode.com/problems/implement-stack-using-queues/description/
+
+// module code
+class MyStack
+{
 public:
     queue<int> q;
-    MyStack() {
-        
+    MyStack()
+    {
     }
-    
-    void push(int x) {
+
+    void push(int x)
+    {
         q.push(x);
     }
-    
-    int pop() {
-       queue<int> q2;
-       int val;
-       while(!q.empty())
-       {
-           val = q.front();
-           q.pop();
-           if(q.empty() == true)
-               break;
-           q2.push(val);
-       } 
-       q = q2;
-       return val;
+
+    int pop()
+    {
+        queue<int> q2;
+        int val;
+        while (!q.empty())
+        {
+            val = q.front();
+            q.pop();
+            if (q.empty() == true)
+                break;
+            q2.push(val);
+        }
+        q = q2;
+        return val;
     }
-    
-    int top() {
+
+    int top()
+    {
         return q.back();
     }
-    
-    bool empty() {
+
+    bool empty()
+    {
+        return q.empty();
+    }
+};
+
+// correct way - top function modified
+class MyStack
+{
+public:
+    queue<int> q;
+    MyStack()
+    {
+    }
+
+    void push(int x)
+    {
+        q.push(x);
+    }
+
+    int pop()
+    {
+        queue<int> q2;
+        int val;
+        while (!q.empty())
+        {
+            val = q.front();
+            q.pop();
+            if (q.empty() == true)
+                break;
+            q2.push(val);
+        }
+        q = q2;
+        return val;
+    }
+
+    // correct
+    int top()
+    {
+        queue<int> q2;
+        int val;
+
+        while (!q.empty())
+        {
+            val = q.front();
+            q.pop();
+
+            if (q.empty())
+            {
+                q2.push(val);
+                break;
+            }
+
+            q2.push(val);
+        }
+
+        q = q2;
+        return val;
+    }
+
+    bool empty()
+    {
         return q.empty();
     }
 };
