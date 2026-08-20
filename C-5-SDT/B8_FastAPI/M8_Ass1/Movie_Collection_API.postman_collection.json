@@ -1,0 +1,322 @@
+{
+  "info": {
+    "name": "Movie Collection API",
+    "description": "Postman collection for testing the Movie Collection FastAPI + SQLite assignment.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_postman_id": "b6f2a1a0-1234-4a2b-9c3d-movie-collection-api"
+  },
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://127.0.0.1:8000",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "1. GET /movies - Get all movies",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/movies",
+          "host": ["{{base_url}}"],
+          "path": ["movies"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "2. GET /movies/{movie_id} - Get single movie",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/movies/1",
+          "host": ["{{base_url}}"],
+          "path": ["movies", "1"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "2b. GET /movies/{movie_id} - Not found (404 test)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/movies/9999",
+          "host": ["{{base_url}}"],
+          "path": ["movies", "9999"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "3. POST /create_movies - Create movie 1",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"movie_id\": 1,\n  \"title\": \"Inception\",\n  \"director\": \"Christopher Nolan\",\n  \"genre\": \"thriller\",\n  \"duration\": 148,\n  \"rating\": 4.8\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/create_movies",
+          "host": ["{{base_url}}"],
+          "path": ["create_movies"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "3b. POST /create_movies - Create movie 2",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"movie_id\": 2,\n  \"title\": \"The Hangover\",\n  \"director\": \"Todd Phillips\",\n  \"genre\": \"comedy\",\n  \"duration\": 100,\n  \"rating\": 4.0\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/create_movies",
+          "host": ["{{base_url}}"],
+          "path": ["create_movies"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "3c. POST /create_movies - Duplicate movie_id (400 test)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"movie_id\": 1,\n  \"title\": \"Duplicate Test\",\n  \"director\": \"Someone\",\n  \"genre\": \"drama\",\n  \"duration\": 90,\n  \"rating\": 3.5\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/create_movies",
+          "host": ["{{base_url}}"],
+          "path": ["create_movies"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "3d. POST /create_movies - Invalid genre (422 test)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"movie_id\": 3,\n  \"title\": \"Bad Genre Movie\",\n  \"director\": \"Someone\",\n  \"genre\": \"horror\",\n  \"duration\": 90,\n  \"rating\": 3.5\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/create_movies",
+          "host": ["{{base_url}}"],
+          "path": ["create_movies"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "3e. POST /create_movies - Negative duration (422 test)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"movie_id\": 4,\n  \"title\": \"Negative Duration Movie\",\n  \"director\": \"Someone\",\n  \"genre\": \"drama\",\n  \"duration\": -10,\n  \"rating\": 3.5\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/create_movies",
+          "host": ["{{base_url}}"],
+          "path": ["create_movies"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "3f. POST /create_movies - Rating out of range (422 test)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"movie_id\": 5,\n  \"title\": \"Out Of Range Rating\",\n  \"director\": \"Someone\",\n  \"genre\": \"action\",\n  \"duration\": 90,\n  \"rating\": 7.5\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/create_movies",
+          "host": ["{{base_url}}"],
+          "path": ["create_movies"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "4. PUT /movies/{movie_id} - Update movie",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Inception (Updated)\",\n  \"director\": \"Christopher Nolan\",\n  \"genre\": \"action\",\n  \"duration\": 150,\n  \"rating\": 5.0\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/movies/1",
+          "host": ["{{base_url}}"],
+          "path": ["movies", "1"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "4b. PUT /movies/{movie_id} - Not found (404 test)",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Ghost Movie\",\n  \"director\": \"Nobody\",\n  \"genre\": \"drama\",\n  \"duration\": 100,\n  \"rating\": 3.0\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/movies/9999",
+          "host": ["{{base_url}}"],
+          "path": ["movies", "9999"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "5. DELETE /movies/{movie_id} - Delete movie",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/movies/2",
+          "host": ["{{base_url}}"],
+          "path": ["movies", "2"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "5b. DELETE /movies/{movie_id} - Not found (404 test)",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/movies/9999",
+          "host": ["{{base_url}}"],
+          "path": ["movies", "9999"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "6. GET /movies/sort - Sort by rating desc (default)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/movies/sort",
+          "host": ["{{base_url}}"],
+          "path": ["movies", "sort"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "6b. GET /movies/sort - Sort by duration asc",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/movies/sort?sort_by=duration&order=asc",
+          "host": ["{{base_url}}"],
+          "path": ["movies", "sort"],
+          "query": [
+            { "key": "sort_by", "value": "duration" },
+            { "key": "order", "value": "asc" }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "6c. GET /movies/sort - Sort by rating asc",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/movies/sort?sort_by=rating&order=asc",
+          "host": ["{{base_url}}"],
+          "path": ["movies", "sort"],
+          "query": [
+            { "key": "sort_by", "value": "rating" },
+            { "key": "order", "value": "asc" }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "6d. GET /movies/sort - Sort by duration desc",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/movies/sort?sort_by=duration&order=desc",
+          "host": ["{{base_url}}"],
+          "path": ["movies", "sort"],
+          "query": [
+            { "key": "sort_by", "value": "duration" },
+            { "key": "order", "value": "desc" }
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
