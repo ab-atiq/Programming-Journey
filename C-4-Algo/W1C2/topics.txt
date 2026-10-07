@@ -27,6 +27,6 @@ E → ending point
 *..*...*
 ********
 
-2. count how many separate parts of the city exist?(HW-BFS solution)
+2. count how many separate parts of the city exist? Or, How many seperate connected road in city? (HW-BFS solution)
 
 3. how many cell/road point have in separate parts?(home work)(HW-BFS+DFS solution)

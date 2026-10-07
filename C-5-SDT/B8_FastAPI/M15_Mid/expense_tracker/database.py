@@ -16,7 +16,7 @@ from sqlalchemy.ext.declarative import declarative_base
 # ---------------------------------------------------------------------------
 SQLALCHEMY_DATABASE_URL = os.getenv(
     "DATABASE_URL",
-    "postgresql://postgres:postgres@localhost:5432/expense_tracker",
+    "postgres://d846e432a82c5a80f313377711b31f6e58be6ebbf1b2100c9b118e8c473b7b1e:sk_2wgKnU4ymqPRgUEHgdEhD@pooled.db.prisma.io:5432/postgres?sslmode=require",
 )
 
 # Render (and some providers) give a URL starting with "postgres://" which
