@@ -6,3 +6,21 @@ B-8
 3. Scope
 
 4. Problem Solving 
+
+
+B-10
+--------> Today's Outline <-----------
+
+1. Online Judge Test Cases (Recap)
+
+2. Typecasting
+
+3. Scope in C Programming
+    - local
+    - global
+    - block
+
+4. Problem Solving
+    i) https://codeforces.com/problemset/problem/1866/A
+    
+    ii) https://codeforces.com/group/MWSDmqGsZm/contest/326175/problem/I

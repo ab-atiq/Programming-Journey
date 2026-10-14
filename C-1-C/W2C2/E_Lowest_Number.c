@@ -11,6 +11,7 @@ int main()
         scanf("%d", &arr[i]);
     }
 
+    // lowest number and index find
     // int min = 1e5 + 1, min_pos = -1;
     int min = INT_MAX, min_pos = -1;
     for (int i = 0; i < n; i++)

@@ -15,3 +15,8 @@
 
 ** Scope (local scope(block scope), global scope)
 ** Escape sequence
+
+/ -> forward slash
+\ -> back slash 
+    -> Escape sequence (% -> %%) 
+    \\ -> back slash print
