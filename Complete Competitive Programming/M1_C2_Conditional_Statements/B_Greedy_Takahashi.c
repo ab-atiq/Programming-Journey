@@ -1,28 +1,56 @@
 // https://atcoder.jp/contests/abc149/tasks/abc149_b
+// Easy solution
 
 #include <stdio.h>
 
 int main()
 {
-    long long int a, b, k;
+    long long a, b, k;
     scanf("%lld %lld %lld", &a, &b, &k);
+
     if (k <= a)
     {
         a -= k;
     }
-    else if (k >= a + b)
-    {
-        a = 0;
-        b = 0;
-    }
     else
     {
-        b -= (k - a); // remaining of k-a. if we provide after then a will reduce by 0. so, getting wrong answer.
-        a = 0;
+        a = 0; // takahashi all cookie eaten
+        // int rem = k - a
+        // b -= rem
+        b -= (k - a); // auki remaining cookies eat
+        if (b < 0)
+            b = 0;
     }
+
     printf("%lld %lld\n", a, b);
+
     return 0;
 }
+
+// mid level solution
+// #include <stdio.h>
+
+// int main()
+// {
+//     long long int a, b, k;
+//     scanf("%lld %lld %lld", &a, &b, &k);
+//     if (k <= a)
+//     {
+//         a -= k;
+//     }
+//     else if (k >= a + b)
+//     {
+//         a = 0;
+//         b = 0;
+//     }
+//     else
+//     {
+//         b -= (k - a); // remaining of k-a. if we provide after then a will reduce by 0. so, getting wrong answer.
+//         a = 0;
+//     }
+//     printf("%lld %lld\n", a, b);
+//     return 0;
+// }
 
 // solution - 2
 // #include <stdio.h>
