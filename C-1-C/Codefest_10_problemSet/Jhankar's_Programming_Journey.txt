@@ -1,0 +1,399 @@
+# B - Jhankar's Programming Journey
+
+## 📝 Problem Statement
+
+Jhankar is learning programming at Phitron. He has a list of `N` programming topics arranged in the order he studies them. Each topic has a difficulty level.
+
+Jhankar starts learning from the first topic. He continues to the next topic only if its difficulty level is strictly greater than the current topic's difficulty level.
+
+If the next topic has an equal or lower difficulty level, Jhankar stops learning.
+
+Your task is to print the difficulty level of the last topic Jhankar reaches.
+
+## 📌 Constraints
+
+- \\(1 \le N \le 100\\)
+- \\(1 \le A_i \le 10^9\\)
+- All input values are integers.
+
+
+## ⌨️ Input Format
+
+- The first line contains an integer `N`, the number of programming topics.
+- The second line contains `N` integers, `A1, A2, ..., AN`, representing the difficulty levels of the topics in order.
+
+## 🖥️ Output Format
+
+Print a single integer representing the difficulty level of the last topic Jhankar reaches.
+
+## 📥 Sample Input 1
+
+```
+5
+1 5 10 4 2
+```
+
+## 📤 Sample Output 1
+
+```
+10
+```
+
+## 💡 Sample Explanation 1
+
+Jhankar starts with a topic of difficulty `1`. The next topics have difficulty `5` and `10`, so he continues learning.
+
+The following topic has difficulty `4`, which is less than `10`. Therefore, he stops at difficulty level `10`.
+
+# 🧪 20 Test Cases
+
+## Test Case 1
+
+Input:
+
+```
+5
+1 5 10 4 2
+```
+
+Output:
+
+```
+10
+```
+
+## Test Case 2
+
+Input:
+
+```
+3
+100 1000 100000
+```
+
+Output:
+
+```
+100000
+```
+
+## Test Case 3
+
+Input:
+
+```
+4
+27 1828 1828 9242
+```
+
+Output:
+
+```
+1828
+```
+
+## Test Case 4
+
+Input:
+
+```
+1
+50
+```
+
+Output:
+
+```
+50
+```
+
+## Test Case 5
+
+Input:
+
+```
+5
+1 2 3 4 5
+```
+
+Output:
+
+```
+5
+```
+
+## Test Case 6
+
+Input:
+
+```
+5
+9 7 5 3 1
+```
+
+Output:
+
+```
+9
+```
+
+## Test Case 7
+
+Input:
+
+```
+6
+2 4 6 8 10 12
+```
+
+Output:
+
+```
+12
+```
+
+## Test Case 8
+
+Input:
+
+```
+5
+10 10 20 30 40
+```
+
+Output:
+
+```
+10
+```
+
+## Test Case 9
+
+Input:
+
+```
+5
+3 6 9 12 15
+```
+
+Output:
+
+```
+15
+```
+
+## Test Case 10
+
+Input:
+
+```
+6
+1 3 5 4 8 10
+```
+
+Output:
+
+```
+5
+```
+
+## Test Case 11
+
+Input:
+
+```
+4
+100 200 300 400
+```
+
+Output:
+
+```
+400
+```
+
+## Test Case 12
+
+Input:
+
+```
+5
+7 14 21 28 20
+```
+
+Output:
+
+```
+28
+```
+
+## Test Case 13
+
+Input:
+
+```
+5
+50 60 70 80 90
+```
+
+Output:
+
+```
+90
+```
+
+## Test Case 14
+
+Input:
+
+```
+6
+5 10 15 15 20 25
+```
+
+Output:
+
+```
+15
+```
+
+## Test Case 15
+
+Input:
+
+```
+4
+10000000 20000000 30000000 40000000
+```
+
+Output:
+
+```
+40000000
+```
+
+## Test Case 16
+
+Input:
+
+```
+5
+20 18 16 14 12
+```
+
+Output:
+
+```
+20
+```
+
+## Test Case 17
+
+Input:
+
+```
+7
+1 2 3 4 5 6 7
+```
+
+Output:
+
+```
+7
+```
+
+## Test Case 18
+
+Input:
+
+```
+5
+2 5 8 11 10
+```
+
+Output:
+
+```
+11
+```
+
+## Test Case 19
+
+Input:
+
+```
+6
+4 8 12 16 20 24
+```
+
+Output:
+
+```
+24
+```
+
+## Test Case 20
+
+Input:
+
+```
+5
+10 20 30 40 50
+```
+
+Output:
+
+```
+50
+```
+
+
+
+## 💻 C Solution — Jhankar's Programming Journey
+
+```
+
+#include <stdio.h>
+
+int main()
+{
+    int N;
+    scanf("%d", &N);
+
+    int A[100];
+
+    for (int i = 0; i < N; i++)
+    {
+        scanf("%d", &A[i]);
+    }
+
+    int current = A[0];
+
+    for (int i = 1; i < N; i++)
+    {
+        if (A[i] > current)
+        {
+            current = A[i];
+        }
+        else
+        {
+            break;
+        }
+    }
+
+    printf("%d\n", current);
+
+    return 0;
+}
+
+```
+
+## 💡 Solution Hints
+
+1. Take input `N` and store the topic difficulty levels in an array.
+2. Initialize `current` with the first topic's difficulty.
+3. Use a `for` loop to check each next topic.
+4. If `A[i] > current`, update `current`; otherwise, stop the loop using `break`.
+5. Print `current`, the difficulty level where Jhankar stops.
+
+Concepts: Array, `for` loop, `if-else`, and `break`.

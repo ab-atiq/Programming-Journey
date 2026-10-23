@@ -1,0 +1,466 @@
+# Phitron Marks Challenge
+
+## 📝 Problem Statement
+
+Atiq is a student in the Phitron Programming Course. As part of the course, he needs to complete exams in **N subjects** to achieve his target average score.
+
+Each subject exam has a maximum score of **M** marks. Atiq has already completed exams in **N - 1 subjects**, and you are given his scores in those exams.
+
+To achieve his target, Atiq needs an average score of at least **K** across all **N subjects**.
+
+Now, Atiq is preparing for his final subject exam. Your task is to determine the **minimum marks Atiq needs to obtain in the final exam** to achieve his target average.
+
+If Atiq cannot achieve his target average even by scoring full marks in the final exam, print `-1`.
+
+## 📌 Constraints
+
+- \(2 \le N \le 100\)
+- \(1 \le M \le 100\)
+- \(0 \le K \le M\)
+- \(0 \le A_i \le M\), where \(1 \le i \le N-1\)
+- All input values are integers.
+
+## ⌨️ Input Format
+
+The first line contains three integers `N`, `M`, and `K` — the total number of subjects, the maximum marks for each subject, and Atiq's target average score, respectively.
+
+The second line contains `N - 1` integers, `A1, A2, ..., A(N-1)`, representing Atiq's scores in the subjects he has already completed.
+
+## 🖥️ Output Format
+
+Print the minimum marks Atiq needs to obtain in the final exam to achieve his target average.
+
+If achieving the target is impossible, print `-1`.
+
+## 📥 Sample Input 1
+
+```text
+5 10 7
+10 7 8 10
+```
+
+## 📤 Sample Output 1
+
+```text
+0
+```
+
+## 💡 Sample Explanation 1
+
+Atiq has already scored a total of `35` marks in four subjects.
+
+If he scores `0` in the final exam, his total will remain `35`.
+
+His average will be `35 / 5 = 7`, which meets his target.
+
+Therefore, the minimum marks required are `0`.
+
+## 📥 Sample Input 2
+
+```text
+4 100 60
+100 100 100
+```
+
+## 📤 Sample Output 2
+
+```text
+0
+```
+
+## 💡 Sample Explanation 2
+
+Atiq has already scored `300` marks in three subjects.
+
+Even if he scores `0` in the final exam, his average will be `300 / 4 = 75`.
+
+Since `75` is greater than his target average of `60`, Atiq has already secured his goal.
+
+Therefore, the minimum marks required are `0`.
+
+## 📥 Sample Input 3
+
+```text
+4 100 60
+100 0 0
+```
+
+## 📤 Sample Output 3
+
+```text
+-1
+```
+
+## 💡 Sample Explanation 3
+
+Atiq has already scored `100` marks in total.
+
+To achieve an average of at least `60` across four subjects, he needs a total of at least `240` marks.
+
+This means he would need `140` marks in the final exam. However, the maximum possible score is `100`.
+
+Therefore, Atiq cannot achieve his target, and the answer is `-1`.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1. C Solution — Phitron Marks Challenge
+This solution is suitable for beginner-level Phitron students. It uses scanf(), a for loop, and if-else conditions.
+
+#include <stdio.h>
+
+int main()
+{
+    int N, M, K;
+    scanf("%d %d %d", &N, &M, &K);
+
+    int sum = 0;
+
+    for (int i = 1; i < N; i++)
+    {
+        int marks;
+        scanf("%d", &marks);
+        sum += marks;
+    }
+
+    int required = (N * K) - sum;
+
+    if (required <= 0)
+    {
+        printf("0\n");
+    }
+    else if (required <= M)
+    {
+        printf("%d\n", required);
+    }
+    else
+    {
+        printf("-1\n");
+    }
+
+    return 0;
+}
+
+
+
+How the solution works
+1. Read N, M, and K.
+2. Use a loop to read the marks of the first N - 1 subjects and calculate their sum.
+3. Calculate the total marks needed to achieve the target average: N * K.
+4. Subtract the marks already obtained from the required total.
+5. If the result is less than or equal to zero, print 0.
+6. If the result is at most M, print the required marks; otherwise, print -1.
+
+
+
+
+
+## Test Case 1
+
+Input:
+
+```
+5 10 7
+10 7 8 10
+```
+
+Output:
+
+```
+0
+```
+
+## Test Case 2
+
+Input:
+
+```
+4 100 60
+100 100 100
+```
+
+Output:
+
+```
+0
+```
+
+## Test Case 3
+
+Input:
+
+```
+4 100 60
+100 0 0
+```
+
+Output:
+
+```
+-1
+```
+
+## Test Case 4
+
+Input:
+
+```
+3 10 5
+2 3
+```
+
+Output:
+
+```
+10
+```
+
+## Test Case 5
+
+Input:
+
+```
+3 10 8
+10 10
+```
+
+Output:
+
+```
+4
+```
+
+## Test Case 6
+
+Input:
+
+```
+2 100 50
+20
+```
+
+Output:
+
+```
+80
+```
+
+## Test Case 7
+
+Input:
+
+```
+2 100 50
+90
+```
+
+Output:
+
+```
+10
+```
+
+## Test Case 8
+
+Input:
+
+```
+5 20 10
+10 10 10 10
+```
+
+Output:
+
+```
+10
+```
+
+## Test Case 9
+
+Input:
+
+```
+5 20 15
+20 20 20 0
+```
+
+Output:
+
+```
+15
+```
+
+## Test Case 10
+
+Input:
+
+```
+4 50 40
+50 50 0
+```
+
+Output:
+
+```
+-1
+```
+
+## Test Case 11
+
+Input:
+
+```
+6 10 9
+10 10 10 10 10
+```
+
+Output:
+
+```
+4
+```
+
+## Test Case 12
+
+Input:
+
+```
+6 10 10
+10 10 10 10 10
+```
+
+Output:
+
+```
+10
+```
+
+## Test Case 13
+
+Input:
+
+```
+3 5 0
+0 0
+```
+
+Output:
+
+```
+0
+```
+
+## Test Case 14
+
+Input:
+
+```
+3 5 5
+5 5
+```
+
+Output:
+
+```
+5
+```
+
+## Test Case 15
+
+Input:
+
+```
+4 10 3
+0 0 0
+```
+
+Output:
+
+```
+-1
+```
+
+## Test Case 16
+
+Input:
+
+```
+4 10 8
+10 10 10
+```
+
+Output:
+
+```
+2
+```
+
+## Test Case 17
+
+Input:
+
+```
+7 100 70
+70 70 70 70 70 70
+```
+
+Output:
+
+```
+70
+```
+
+## Test Case 18
+
+Input:
+
+```
+5 100 80
+100 100 100 100
+```
+
+Output:
+
+```
+0
+```
+
+## Test Case 19
+
+Input:
+
+```
+3 100 75
+100 50
+```
+
+Output:
+
+```
+75
+```
+
+## Test Case 20
+
+Input:
+
+```
+10 10 6
+6 6 6 6 6 6 6 6 6
+```
+
+Output:
+
+```
+6
+```
