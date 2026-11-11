@@ -5,6 +5,7 @@
 // method 1: 0 to n-1 index value sum
 long long int sum(int a[], int n, int i)
 {
+    // if(i==n) return 0; // when i==n, it means we have already added all the elements of the array, so we return 0 as the base case.
     if (i == n - 1)
     {
         return a[n - 1];

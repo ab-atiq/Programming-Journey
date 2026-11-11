@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+char str[10000001]; // 1e7 + 1 for null terminator, it will run in computer
 int main()
 {
     char str[10000001]; // 1e7 + 1 for null terminator
